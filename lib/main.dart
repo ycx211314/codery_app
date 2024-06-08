@@ -1,4 +1,4 @@
-import 'package:codery/pages/application/application_page/application_page.dart';
+import 'package:codery/pages/application/application_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,8 +11,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: 'ducafecat.tech',
-      home: ApplicationPagePage(),
+      title: 'Codery APP',
+      home: ApplicationPage(),
       // routes: staticRoutes,
       debugShowCheckedModeBanner: false,
     );
@@ -119,7 +119,6 @@ class MyApp extends StatelessWidget {
 //           //
 //           // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
 //           // action in the IDE, or press "p" in the console), to see the
-//           // wireframe for each widget.
 //           mainAxisAlignment: MainAxisAlignment.center,
 //           children: <Widget>[
 //             const Text(

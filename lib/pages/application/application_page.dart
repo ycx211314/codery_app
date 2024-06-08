@@ -1,13 +1,16 @@
+import 'package:codery/common/icons/iconfont.dart';
+import 'package:codery/pages/me/me_page/me_page.dart';
 import 'package:flutter/material.dart';
 
-class ApplicationPagePage extends StatefulWidget {
-  const ApplicationPagePage({super.key});
+/* cSpell:disable */
+class ApplicationPage extends StatefulWidget {
+  const ApplicationPage({super.key});
 
   @override
-  State<ApplicationPagePage> createState() => _ApplicationPagePageState();
+  State<ApplicationPage> createState() => _ApplicationPageState();
 }
 
-class _ApplicationPagePageState extends State<ApplicationPagePage>
+class _ApplicationPageState extends State<ApplicationPage>
     with SingleTickerProviderStateMixin {
   late int _pageIndex = 0;
   final List<String> _tabTitle = ['首页', '分类', '购物车', '我的'];
@@ -30,7 +33,12 @@ class _ApplicationPagePageState extends State<ApplicationPagePage>
         ),
         label: 'tag'),
     const BottomNavigationBarItem(
-        icon: Icon(Icons.person), activeIcon: Icon(Icons.person), label: 'my'),
+        icon: Icon(Iconfont.geren),
+        activeIcon: Icon(
+          Iconfont.geren,
+          color: Colors.red,
+        ),
+        label: 'my'),
   ];
 
   @override
@@ -56,11 +64,7 @@ class _ApplicationPagePageState extends State<ApplicationPagePage>
         //       print('搜索');
         //     }),
         actions: [
-          IconButton(
-              icon: const Icon(Icons.search),
-              onPressed: () {
-                print('搜索');
-              }),
+          IconButton(icon: const Icon(Icons.search), onPressed: () {}),
         ]);
   }
 
@@ -78,9 +82,7 @@ class _ApplicationPagePageState extends State<ApplicationPagePage>
         Container(
           color: Colors.blue,
         ),
-        Container(
-          color: Colors.yellow,
-        ),
+        const MePage(),
       ],
     );
   }

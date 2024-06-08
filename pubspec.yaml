@@ -69,6 +69,7 @@ flutter:
   assets:
     - assets/icon/
     - assets/images/
+    - assets/fonts/iconfonts/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -84,7 +85,7 @@ flutter:
   fonts:
     - family: Iconfont
       fonts:
-        - asset: fonts/iconfont/iconfont.tff
+        - asset: assets/fonts/iconfonts/iconfont.ttf
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
