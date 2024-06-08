@@ -32,6 +32,10 @@ mkdir -p ./lib/{api,common/{constants,utils,widgets},data/{models,providers,repo
 dart run build_runner build
 ```
 
+## 使用 flutter_screenutil 做适配
+
+flutter_screenutil
+
 # 待完成
 
 1. Iconfont 引入

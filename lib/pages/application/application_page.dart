@@ -1,5 +1,5 @@
 import 'package:codery/common/icons/iconfont.dart';
-import 'package:codery/pages/me/me_page/me_page.dart';
+import 'package:codery/pages/me/me_page.dart';
 import 'package:flutter/material.dart';
 
 /* cSpell:disable */
@@ -17,28 +17,23 @@ class _ApplicationPageState extends State<ApplicationPage>
   late PageController _pageController;
   final List<BottomNavigationBarItem> _bottomTabs = <BottomNavigationBarItem>[
     const BottomNavigationBarItem(
-        icon: Icon(
-          Icons.home,
-        ),
-        activeIcon: Icon(Icons.home_filled),
-        label: 'main'),
+        icon: Icon(Iconfont.gongzuotai),
+        activeIcon: Icon(Iconfont.gongzuotai),
+        label: 'HOME'),
     const BottomNavigationBarItem(
-        icon: Icon(Icons.message),
-        activeIcon: Icon(Icons.message_outlined),
-        label: 'category'),
+        icon: Icon(Iconfont.rili),
+        activeIcon: Icon(Iconfont.rili),
+        label: 'SCHEDULE'),
     const BottomNavigationBarItem(
-        icon: Icon(Icons.tag),
-        activeIcon: Icon(
-          Icons.tag_outlined,
-        ),
-        label: 'tag'),
+        icon: Icon(Iconfont.huiyi),
+        activeIcon: Icon(Iconfont.huiyi),
+        label: 'MESSAGE'),
     const BottomNavigationBarItem(
         icon: Icon(Iconfont.geren),
         activeIcon: Icon(
           Iconfont.geren,
-          color: Colors.red,
         ),
-        label: 'my'),
+        label: 'ME'),
   ];
 
   @override
