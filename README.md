@@ -26,3 +26,43 @@ mkdir -p ./lib/{api,common/{constants,utils,widgets},data/{models,providers,repo
 2. 创建一个类，添加@JsonSerializable()注解，然后使用 json_serializable 生成序列化代码
 3. 添加@JsonKey(name: 'xxx')注解，指定 json 字段名
 4. 使用 json_serializable 生成序列化代码
+5. 运行命令实现
+
+```bash
+dart run build_runner build
+```
+
+# 待完成
+
+1. Iconfont 引入
+2. 添加路由
+
+## Iconfont 引入
+
+1. 在 pubspec.yaml 中添加依赖
+
+```yaml
+dev_dependencies:
+  iconfont_builder2: ^1.0.6
+```
+
+全局安装
+
+```bash
+dart pub global activate iconfont_builder2
+```
+
+2.配置 pubspec.yaml
+
+```yaml
+fonts:
+  - family: Iconfont
+    fonts:
+      - asset: fonts/iconfont/iconfont.tff
+```
+
+3. 运行命令实现
+
+```bash
+iconfont_builder2 --from assets/fonts/iconfonts --to ./lib/iconfont.dart
+```

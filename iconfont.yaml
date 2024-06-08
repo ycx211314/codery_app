@@ -1,0 +1,6 @@
+# iconfont.yaml
+- icons: 
+    - css: https://at.alicdn.com/t/c/font_4532348_y82oeo8iw5i.css
+      dir: test
+  in: assets/fonts/
+  out: lib/common/icons/
