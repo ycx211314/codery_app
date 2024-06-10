@@ -1,5 +1,6 @@
 import 'package:codery/common/utils/color_helper.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 final Color primaryColor = ColorHelper.hexToColor("#409EFF");
 final Color secondaryLightColor = ColorHelper.hexToColor("#909399");
@@ -22,4 +23,12 @@ ThemeData coderyTheme = ThemeData(
       unselectedItemColor: secondaryLightColor,
       selectedIconTheme: IconThemeData(color: primaryColor),
       unselectedIconTheme: IconThemeData(color: secondaryLightColor)),
+  filledButtonTheme: FilledButtonThemeData(
+      style: ButtonStyle(
+    shape:
+        WidgetStateProperty.all<RoundedRectangleBorder>(RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(8.0), // 设置圆角半径
+    )),
+    backgroundColor: WidgetStateProperty.all<Color>(primaryColor),
+  )),
 );

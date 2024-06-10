@@ -1,6 +1,9 @@
+import 'dart:io';
+
 import 'package:codery/common/config/global.dart';
 import 'package:codery/common/themes/codery_theme.dart';
 import 'package:codery/generated/l10n.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:codery/pages/application/application_page.dart';
@@ -36,5 +39,17 @@ class MyApp extends StatelessWidget {
             supportedLocales: S.delegate.supportedLocales,
           );
         });
+  }
+
+  Future<void> init() async {
+    // await Global.init();
+    WidgetsFlutterBinding.ensureInitialized();
+
+    //android 状态栏设置为透明的沉浸
+    if (Platform.isAndroid) {
+      SystemUiOverlayStyle systemUiOverlayStyle =
+          const SystemUiOverlayStyle(statusBarColor: Colors.transparent);
+      SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
+    }
   }
 }

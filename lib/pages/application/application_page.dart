@@ -1,5 +1,6 @@
 import 'package:codery/common/icons/iconfont.dart';
 import 'package:codery/generated/l10n.dart';
+import 'package:codery/pages/demo/demo_page.dart';
 import 'package:codery/pages/me/me_page.dart';
 import 'package:flutter/material.dart';
 
@@ -29,7 +30,7 @@ class _ApplicationPageState extends State<ApplicationPage>
     const BottomNavigationBarItem(
         icon: Icon(Iconfont.rili),
         activeIcon: Icon(Iconfont.rili),
-        label: 'SCHEDULE'),
+        label: 'DEMO'),
     const BottomNavigationBarItem(
         icon: Icon(Iconfont.huiyi),
         activeIcon: Icon(Iconfont.huiyi),
@@ -77,11 +78,9 @@ class _ApplicationPageState extends State<ApplicationPage>
         Container(
           color: Colors.red,
         ),
+        const DemoPage(),
         Container(
           color: Colors.green,
-        ),
-        Container(
-          color: Colors.blue,
         ),
         const MePage(),
       ],
@@ -113,9 +112,16 @@ class _ApplicationPageState extends State<ApplicationPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _buildAppBar() as PreferredSizeWidget?,
-      body: _buildPageView(),
-      bottomNavigationBar: _buildBottomNavigationBar(),
-    );
+        appBar: _buildAppBar() as PreferredSizeWidget?,
+        body: _buildPageView(),
+        bottomNavigationBar: _buildBottomNavigationBar(),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            print('点击了');
+          },
+          child: const Icon(Icons.add),
+        ),
+        floatingActionButtonLocation:
+            FloatingActionButtonLocation.centerDocked);
   }
 }
