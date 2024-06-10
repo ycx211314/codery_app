@@ -5,14 +5,10 @@ class MePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('MePagePage'),
-        centerTitle: true,
-      ),
-      body: const Center(
+    return const Scaffold(
+      body: Center(
         child: Text(
-          'MePagePage is working',
+          'MePage is working',
           style: TextStyle(fontSize: 20),
         ),
       ),
