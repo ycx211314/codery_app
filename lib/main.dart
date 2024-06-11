@@ -44,6 +44,8 @@ class MyApp extends StatelessWidget {
   Future<void> init() async {
     // await Global.init();
     WidgetsFlutterBinding.ensureInitialized();
+    //锁定竖屏
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);//DeviceOrientation有四个实例，代表四个方向。结合英文意思，这是设置首选方向
 
     //android 状态栏设置为透明的沉浸
     if (Platform.isAndroid) {
