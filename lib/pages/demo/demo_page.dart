@@ -1,3 +1,4 @@
+import 'package:codery/pages/sample/fade_in_image_page.dart';
 import 'package:codery/pages/sample/fade_transition_demo_page.dart';
 import 'package:codery/pages/sample/page_view_demo_page.dart';
 import 'package:codery/pages/sample/sliver_app_bar_demo_page.dart';
@@ -45,6 +46,14 @@ class DemoPage extends StatelessWidget {
                 }));
               },
               child: const Text("FadeTransition")),
+          FilledButton(
+              onPressed: () {
+                //navigator导航到一个页面
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return const FadeInImagePage();
+                }));
+              },
+              child: const Text("FadeInImage")),
         ],
       )),
     );

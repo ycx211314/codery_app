@@ -16,7 +16,7 @@ class _ApplicationPageState extends State<ApplicationPage>
     with SingleTickerProviderStateMixin {
   late int _pageIndex = 0;
   late final List<String> _tabTitle = [
-    S.of(context).application_tabs_home,
+    S.of(context)!.application_tabs_home,
     '分类',
     '购物车',
     '我的'
