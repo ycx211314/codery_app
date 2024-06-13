@@ -6,6 +6,9 @@ class SliverAppBarDemoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("SliverAppBarDemo"),
+      ),
       body: CustomScrollView(
         slivers: <Widget>[
           const SliverAppBar(
