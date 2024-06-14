@@ -1,1 +1,18 @@
-{}
+{
+    "files.exclude": {
+        "**/android/**": true
+    },
+    "search.exclude": {
+        "**/android/**": true
+    },
+    "eslint.workingDirectories": [
+        {
+            "directory": "./",
+            "changeProcessCWD": true
+        },
+        {
+            "directory": "./android",
+            "changeProcessCWD": false
+        }
+    ]
+}
