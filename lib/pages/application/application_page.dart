@@ -1,5 +1,4 @@
 import 'package:codery/common/icons/iconfont.dart';
-import 'package:codery/generated/l10n.dart';
 import 'package:codery/pages/demo/demo_page.dart';
 import 'package:codery/pages/me/me_page.dart';
 import 'package:flutter/material.dart';
@@ -15,12 +14,6 @@ class ApplicationPage extends StatefulWidget {
 class _ApplicationPageState extends State<ApplicationPage>
     with SingleTickerProviderStateMixin {
   late int _pageIndex = 0;
-  late final List<String> _tabTitle = [
-    S.of(context)!.application_tabs_home,
-    '分类',
-    '购物车',
-    '我的'
-  ];
   late PageController _pageController;
   final List<BottomNavigationBarItem> _bottomTabs = <BottomNavigationBarItem>[
     const BottomNavigationBarItem(
@@ -117,7 +110,7 @@ class _ApplicationPageState extends State<ApplicationPage>
         bottomNavigationBar: _buildBottomNavigationBar(),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            print('点击了');
+            // print('点击了');
           },
           child: const Icon(Icons.add),
         ),

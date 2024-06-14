@@ -1,6 +1,5 @@
 import 'package:codery/common/utils/color_helper.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 final Color primaryColor = ColorHelper.hexToColor("#409EFF");
 final Color secondaryLightColor = ColorHelper.hexToColor("#909399");

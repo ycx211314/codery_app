@@ -6,9 +6,6 @@ import 'package:codery/pages/sample/sliver_grid_demo_page.dart';
 import 'package:codery/pages/sample/sliver_l_ist_demo_page.dart';
 import 'package:codery/pages/sample/table_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
-
-import '../sample/stream_builder_demo_page.dart';
 
 class DemoPage extends StatelessWidget {
   const DemoPage({super.key});
@@ -60,21 +57,21 @@ class DemoPage extends StatelessWidget {
               },
               child: const Text("FadeInImage")),
           FilledButton(
-              onPressed = () {
+              onPressed: () {
                 //navigator导航到一个页面
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return SliverLIstDemoPage();
                 }));
               },
-              child = const Text("SliverListView")),
+              child: const Text("SliverListView")),
           FilledButton(
-              onPressed = () {
+              onPressed: () {
                 //navigator导航到一个页面
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return SliverGridDemoPage();
                 }));
               },
-              child = const Text("SliverGridView")),
+              child: const Text("SliverGridView")),
         ],
       )),
     );
