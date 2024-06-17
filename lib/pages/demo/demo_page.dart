@@ -1,3 +1,4 @@
+import 'package:codery/pages/sample/clip_r_rect_demo_page.dart';
 import 'package:codery/pages/sample/custome_paint_demo_page.dart';
 import 'package:codery/pages/sample/fade_in_image_page.dart';
 import 'package:codery/pages/sample/fade_transition_demo_page.dart';
@@ -9,6 +10,7 @@ import 'package:codery/pages/sample/sliver_grid_demo_page.dart';
 import 'package:codery/pages/sample/sliver_l_ist_demo_page.dart';
 import 'package:codery/pages/sample/table_page.dart';
 import 'package:codery/pages/sample/tooltip_demo_page.dart';
+import 'package:codery/pages/sample/transform_demo_page.dart';
 import 'package:flutter/material.dart';
 
 class DemoPage extends StatelessWidget {
@@ -108,6 +110,25 @@ class DemoPage extends StatelessWidget {
                 }));
               },
               child: const Text("Hero")),
+
+          //ClipRRectDemoPage
+          FilledButton(
+              onPressed: () {
+                //navigator导航到一个页面
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return const ClipRRectDemoPage();
+                }));
+              },
+              child: const Text("ClipRRect")),
+          //TransformDemoPage
+          FilledButton(
+              onPressed: () {
+                //navigator导航到一个页面
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return const TransformDemoPage();
+                }));
+              },
+              child: const Text("Transform")),
         ],
       )),
     );
