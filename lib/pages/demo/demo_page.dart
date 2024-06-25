@@ -1,3 +1,4 @@
+import 'package:admob_flutter/admob_flutter.dart';
 import 'package:codery/pages/sample/clip_r_rect_demo_page.dart';
 import 'package:codery/pages/sample/custome_paint_demo_page.dart';
 import 'package:codery/pages/sample/fade_in_image_page.dart';
@@ -11,17 +12,34 @@ import 'package:codery/pages/sample/sliver_l_ist_demo_page.dart';
 import 'package:codery/pages/sample/table_page.dart';
 import 'package:codery/pages/sample/tooltip_demo_page.dart';
 import 'package:codery/pages/sample/transform_demo_page.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class DemoPage extends StatelessWidget {
-  const DemoPage({super.key});
+  DemoPage({super.key});
+
+  AdmobReward rewardAd = AdmobReward(
+    adUnitId: AdmobReward.testAdUnitId,
+    listener: (event, args) {
+      if (event == AdmobAdEvent.rewarded) {
+        print('User was rewarded!');
+        print('Reward type: ${args?['type']}');
+        print('Reward amount: ${args?['amount']}');
+      }
+    },
+  );
 
   @override
   Widget build(BuildContext context) {
+    rewardAd.load();
     return Scaffold(
       body: Center(
           child: ListView(
         children: [
+          AdmobBanner(
+            adUnitId: AdmobBanner.testAdUnitId,
+            adSize: AdmobBannerSize.FULL_BANNER,
+          ),
           FilledButton(
               onPressed: () {
                 //navigator导航到一个页面
@@ -30,6 +48,13 @@ class DemoPage extends StatelessWidget {
                 }));
               },
               child: const Text("SliverAppBarDemo")),
+          FilledButton(
+              onPressed: () async {
+                if (await rewardAd.isLoaded ?? false) {
+                  rewardAd.show();
+                }
+              },
+              child: const Text("Advertisement")),
           FilledButton(
               onPressed: () {
                 //navigator导航到一个页面

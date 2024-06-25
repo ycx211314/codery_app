@@ -71,7 +71,7 @@ class _ApplicationPageState extends State<ApplicationPage>
         Container(
           color: Colors.red,
         ),
-        const DemoPage(),
+        DemoPage(),
         Container(
           color: Colors.green,
         ),

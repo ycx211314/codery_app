@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "145080085678",
+    "project_id": "codery-4853e",
+    "storage_bucket": "codery-4853e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:145080085678:android:db89b4df224660c422513f",
+        "android_client_info": {
+          "package_name": "online.yangcoder.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6WU_CfdkIkITeHIiwnGRdsh06jCI49sE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
