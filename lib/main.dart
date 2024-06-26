@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:admob_flutter/admob_flutter.dart';
+// import 'package:admob_flutter/admob_flutter.dart';
 import 'package:codery/common/config/global.dart';
 import 'package:codery/common/themes/codery_theme.dart';
 import 'package:codery/firebase_options.dart';
@@ -27,9 +27,9 @@ Future<void> init() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  await Admob.requestTrackingAuthorization();
-  Admob.initialize();
-  Admob.initialize(testDeviceIds: ['DB204A68-64E6-450A-920E-ED6E1AF6A3DF']);
+  // await Admob.requestTrackingAuthorization();
+  // Admob.initialize();
+  // Admob.initialize(testDeviceIds: ['DB204A68-64E6-450A-920E-ED6E1AF6A3DF']);
 
   //锁定竖屏
   SystemChrome.setPreferredOrientations([
