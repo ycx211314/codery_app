@@ -71,7 +71,7 @@ class _ApplicationPageState extends State<ApplicationPage>
         Container(
           color: Colors.red,
         ),
-        DemoPage(),
+        const DemoPage(),
         Container(
           color: Colors.green,
         ),
@@ -105,7 +105,7 @@ class _ApplicationPageState extends State<ApplicationPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: _buildAppBar() as PreferredSizeWidget?,
+        // appBar: _buildAppBar() as PreferredSizeWidget?,
         body: _buildPageView(),
         bottomNavigationBar: _buildBottomNavigationBar(),
         floatingActionButton: FloatingActionButton(
