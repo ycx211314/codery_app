@@ -22,7 +22,7 @@ Future<void> init() async {
   // await Global.init();
 
   WidgetsFlutterBinding.ensureInitialized();
-
+  await ScreenUtil.ensureScreenSize();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );

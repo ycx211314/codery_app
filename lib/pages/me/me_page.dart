@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MePage extends StatelessWidget {
   const MePage({super.key});
@@ -8,22 +9,21 @@ class MePage extends StatelessWidget {
   Widget _buildHeader(context) {
     return Container(
       color: Colors.white,
-      padding: const EdgeInsets.only(top: 60),
-      child: Container(
-        height: 120,
-        margin: const EdgeInsets.all(10),
-        child: const Row(
+      padding: EdgeInsets.only(top: 60.h),
+      child: SizedBox(
+        height: 100.h,
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(
-              height: 60,
+              height: 64.h,
               child: CircleAvatar(
-                  radius: 60,
-                  backgroundImage: AssetImage(
-                      'https://vv.aigeltech.com/static/default.png')),
+                  radius: 50.w,
+                  backgroundImage:
+                      const AssetImage('assets/img/touxiang4.png')),
             ),
-            Column(
+            const Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [Text("Codery"), Text("这里就是一句话的描述"), Text("这里VIP")])
