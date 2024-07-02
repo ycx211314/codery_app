@@ -5,6 +5,7 @@ import 'package:codery/common/config/global.dart';
 import 'package:codery/common/themes/codery_theme.dart';
 import 'package:codery/firebase_options.dart';
 import 'package:codery/generated/l10n.dart';
+import 'package:codery/routes/app_router.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -15,7 +16,7 @@ import 'package:intl/intl.dart';
 
 void main() {
   init();
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 Future<void> init() async {
@@ -45,8 +46,8 @@ Future<void> init() async {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
+  MyApp({super.key});
+  final _appRouter = AppRouter();
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -54,12 +55,12 @@ class MyApp extends StatelessWidget {
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (context, child) {
+          MaterialApp.router(routerConfig: _appRouter.config());
           return MaterialApp(
             title: 'Codery APP',
             home: const ApplicationPage(),
             theme: coderyTheme,
             locale: Locale(Intl.getCurrentLocale()),
-            // routes: staticRoutes,
             debugShowCheckedModeBanner: true,
             localizationsDelegates: const [
               GlobalMaterialLocalizations.delegate,
