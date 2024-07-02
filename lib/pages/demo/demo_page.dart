@@ -1,4 +1,5 @@
 // import 'package:admob_flutter/admob_flutter.dart';
+import 'package:auto_route/annotations.dart';
 import 'package:codery/pages/sample/animated_builder_deme_page.dart';
 import 'package:codery/pages/sample/clip_r_rect_demo_page.dart';
 import 'package:codery/pages/sample/custome_paint_demo_page.dart';
@@ -17,6 +18,7 @@ import 'package:codery/pages/sample/transform_demo_page.dart';
 import 'package:codery/pages/sample/value_listenable_builder_demo_page.dart';
 import 'package:flutter/material.dart';
 
+@RoutePage()
 class DemoPage extends StatelessWidget {
   const DemoPage({super.key});
 
