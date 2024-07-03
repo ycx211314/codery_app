@@ -1,5 +1,6 @@
 // import 'package:admob_flutter/admob_flutter.dart';
 import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:codery/pages/sample/animated_builder_deme_page.dart';
 import 'package:codery/pages/sample/clip_r_rect_demo_page.dart';
 import 'package:codery/pages/sample/custome_paint_demo_page.dart';
@@ -16,6 +17,7 @@ import 'package:codery/pages/sample/table_page.dart';
 import 'package:codery/pages/sample/tooltip_demo_page.dart';
 import 'package:codery/pages/sample/transform_demo_page.dart';
 import 'package:codery/pages/sample/value_listenable_builder_demo_page.dart';
+import 'package:codery/routes/app_router.dart';
 import 'package:flutter/material.dart';
 
 @RoutePage()
@@ -46,10 +48,12 @@ class DemoPage extends StatelessWidget {
           // ),
           FilledButton(
               onPressed: () {
-                //navigator导航到一个页面
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return const SliverAppBarDemoPage();
-                }));
+                //navigator导航到一个页面\
+                context.router.navigate(const SliverApp());
+                // context.router.navigateNamed('/login');
+                // Navigator.push(context, MaterialPageRoute(builder: (context) {
+                //   return const SliverAppBarDemoPage();
+                // }));
               },
               child: const Text("SliverAppBarDemo")),
           // FilledButton(

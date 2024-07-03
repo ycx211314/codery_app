@@ -27,10 +27,26 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const DemoPage(),
       );
     },
-    SignInRoute.name: (routeData) {
+    MeRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const SignInPage(),
+        child: const MePage(),
+      );
+    },
+    SignInRoute.name: (routeData) {
+      final args = routeData.argsAs<SignInRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: SignInPage(
+          key: args.key,
+          onResult: args.onResult,
+        ),
+      );
+    },
+    SliverApp.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const SliverAppBarDemoPage(),
       );
     },
   };
@@ -65,15 +81,66 @@ class DemoRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [SignInPage]
-class SignInRoute extends PageRouteInfo<void> {
-  const SignInRoute({List<PageRouteInfo>? children})
+/// [MePage]
+class MeRoute extends PageRouteInfo<void> {
+  const MeRoute({List<PageRouteInfo>? children})
       : super(
+          MeRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'MeRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SignInPage]
+class SignInRoute extends PageRouteInfo<SignInRouteArgs> {
+  SignInRoute({
+    Key? key,
+    required void Function(bool) onResult,
+    List<PageRouteInfo>? children,
+  }) : super(
           SignInRoute.name,
+          args: SignInRouteArgs(
+            key: key,
+            onResult: onResult,
+          ),
           initialChildren: children,
         );
 
   static const String name = 'SignInRoute';
+
+  static const PageInfo<SignInRouteArgs> page = PageInfo<SignInRouteArgs>(name);
+}
+
+class SignInRouteArgs {
+  const SignInRouteArgs({
+    this.key,
+    required this.onResult,
+  });
+
+  final Key? key;
+
+  final void Function(bool) onResult;
+
+  @override
+  String toString() {
+    return 'SignInRouteArgs{key: $key, onResult: $onResult}';
+  }
+}
+
+/// generated route for
+/// [SliverAppBarDemoPage]
+class SliverApp extends PageRouteInfo<void> {
+  const SliverApp({List<PageRouteInfo>? children})
+      : super(
+          SliverApp.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SliverApp';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

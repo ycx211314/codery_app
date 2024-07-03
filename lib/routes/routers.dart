@@ -3,7 +3,9 @@ import '/pages/sign_in/sign_in_page.dart';
 
 var staticRoutes = {
   // "/":(context)=>HomePage(),
-  "/sign_in": (context) => const SignInPage(),
+  "/sign_in": (context) => SignInPage(onResult: (success) {
+        print(success);
+      }),
   "/sign_up": (context) => const SignUpPage(),
   // "/home":(context)=>HomePage(),
   // "/home/detail":(context)=>DetailPage(),

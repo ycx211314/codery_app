@@ -3,6 +3,7 @@ import 'dart:io';
 // import 'package:admob_flutter/admob_flutter.dart';
 import 'package:codery/common/config/global.dart';
 import 'package:codery/common/themes/codery_theme.dart';
+import 'package:codery/data/provider/auth_provider.dart';
 import 'package:codery/firebase_options.dart';
 import 'package:codery/generated/l10n.dart';
 import 'package:codery/routes/app_router.dart';
@@ -13,10 +14,18 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:codery/pages/application/application_page.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   init();
-  runApp(MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => AuthProvider()),
+      ],
+      child: MyApp(),
+    ),
+  );
 }
 
 Future<void> init() async {
@@ -55,10 +64,11 @@ class MyApp extends StatelessWidget {
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (context, child) {
-          MaterialApp.router(routerConfig: _appRouter.config());
-          return MaterialApp(
+          // MaterialApp.router(routerConfig: _appRouter.config())
+          return MaterialApp.router(
             title: 'Codery APP',
-            home: const ApplicationPage(),
+            // home: const ApplicationPage(),
+            routerConfig: _appRouter.config(),
             theme: coderyTheme,
             locale: Locale(Intl.getCurrentLocale()),
             debugShowCheckedModeBanner: true,

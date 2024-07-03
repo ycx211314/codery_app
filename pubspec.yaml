@@ -42,6 +42,7 @@ dependencies:
   # admob_flutter: ^3.0.0
   firebase_core: ^2.4.1
   auto_route: ^8.2.0
+  provider: ^6.1.2
 
 dev_dependencies:
   flutter_test:
