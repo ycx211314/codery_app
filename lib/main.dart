@@ -3,11 +3,9 @@ import 'dart:io';
 // import 'package:admob_flutter/admob_flutter.dart';
 import 'package:codery/common/config/global.dart';
 import 'package:codery/common/themes/codery_theme.dart';
-import 'package:codery/data/provider/auth_provider.dart';
-import 'package:codery/firebase_options.dart';
+// import 'package:codery/firebase_options.dart';
 import 'package:codery/generated/l10n.dart';
-import 'package:codery/routes/app_router.dart';
-import 'package:firebase_core/firebase_core.dart';
+// import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -33,9 +31,9 @@ Future<void> init() async {
 
   WidgetsFlutterBinding.ensureInitialized();
   await ScreenUtil.ensureScreenSize();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  // await Firebase.initializeApp(
+  //   options: DefaultFirebaseOptions.currentPlatform,
+  // );
 
   // await Admob.requestTrackingAuthorization();
   // Admob.initialize();
