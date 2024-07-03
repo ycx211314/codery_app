@@ -1,5 +1,3 @@
-// import 'package:admob_flutter/admob_flutter.dart';
-import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:codery/pages/sample/animated_builder_deme_page.dart';
 import 'package:codery/pages/sample/clip_r_rect_demo_page.dart';
@@ -10,7 +8,6 @@ import 'package:codery/pages/sample/fade_transition_demo_page.dart';
 import 'package:codery/pages/sample/hero_demo_page.dart';
 import 'package:codery/pages/sample/inherited_widget_demo_page.dart';
 import 'package:codery/pages/sample/page_view_demo_page.dart';
-import 'package:codery/pages/sample/sliver_app_bar_demo_page.dart';
 import 'package:codery/pages/sample/sliver_grid_demo_page.dart';
 import 'package:codery/pages/sample/sliver_l_ist_demo_page.dart';
 import 'package:codery/pages/sample/table_page.dart';
@@ -23,17 +20,6 @@ import 'package:flutter/material.dart';
 @RoutePage()
 class DemoPage extends StatelessWidget {
   const DemoPage({super.key});
-
-  // AdmobReward rewardAd = AdmobReward(
-  //   adUnitId: AdmobReward.testAdUnitId,
-  //   listener: (event, args) {
-  //     if (event == AdmobAdEvent.rewarded) {
-  //       print('User was rewarded!');
-  //       print('Reward type: ${args?['type']}');
-  //       print('Reward amount: ${args?['amount']}');
-  //     }
-  //   },
-  // );
 
   @override
   Widget build(BuildContext context) {
