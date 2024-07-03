@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:codery/pages/application/application_page.dart';
 import 'package:codery/pages/demo/demo_page.dart';
-import 'package:codery/pages/me/me_page.dart';
+import 'package:codery/pages/profile/me_page.dart';
 import 'package:codery/pages/sample/sliver_app_bar_demo_page.dart';
 import 'package:codery/pages/sign_in/sign_in_page.dart';
 import 'package:codery/routes/auth_guard.dart';

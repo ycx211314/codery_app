@@ -1,7 +1,7 @@
 import 'package:auto_route/annotations.dart';
 import 'package:codery/common/icons/iconfont.dart';
 import 'package:codery/pages/demo/demo_page.dart';
-import 'package:codery/pages/me/me_page.dart';
+import 'package:codery/pages/profile/me_page.dart';
 import 'package:flutter/material.dart';
 
 /* cSpell:disable */
@@ -77,7 +77,7 @@ class _ApplicationPageState extends State<ApplicationPage>
         Container(
           color: Colors.green,
         ),
-        const MePage(),
+        const ProfilePage(),
       ],
     );
   }

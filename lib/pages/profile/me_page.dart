@@ -4,13 +4,12 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 @RoutePage()
-class MePage extends StatelessWidget {
-  const MePage({super.key});
+class ProfilePage extends StatelessWidget {
+  const ProfilePage({super.key});
 
   //头部
   Widget _buildHeader(context) {
-    return Container(
-      color: Colors.white,
+    return SizedBox(
       height: 165.h,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -50,21 +49,37 @@ class MePage extends StatelessWidget {
                   ]),
             ),
           ),
-          const Divider(
-            color: Colors.red,
-            height: 2,
-          )
         ],
       ),
     );
   }
 
   //第一个区域
-  Widget _buildFirstArea(context) {
-    return Container(
-      height: 200,
-      color: Colors.green,
-      child: const Text("Header"),
+  Widget _buildCells(context) {
+    return Row(
+      children: [
+        SizedBox(
+          height: 61.h,
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  const Icon(Icons.abc_sharp),
+                  Text(
+                    "这里是信息",
+                    style: TextStyle(fontSize: 18.sp),
+                  ),
+                  const Text("Header"),
+                ],
+              ),
+            ],
+          ),
+        ),
+        Divider(
+          height: 5.h,
+          color: Colors.red,
+        ),
+      ],
     );
   }
 
@@ -85,11 +100,14 @@ class MePage extends StatelessWidget {
       child: Container(
         color: Colors.grey.shade100,
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             _buildHeader(context),
-            _buildFirstArea(context),
+            const Divider(
+              height: 1,
+            ),
+            _buildCells(context),
             _buildSecondArea(context),
           ],
         ),

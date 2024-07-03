@@ -17,6 +17,7 @@ final Color borderLighterColor = ColorHelper.hexToColor("#EBEEF5");
 final Color borderExtraLightColor = ColorHelper.hexToColor("#F2F6FC");
 
 ThemeData coderyTheme = ThemeData(
+  dividerTheme: DividerThemeData(color: borderBaseColor),
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
       selectedItemColor: primaryColor,
       unselectedItemColor: secondaryLightColor,
