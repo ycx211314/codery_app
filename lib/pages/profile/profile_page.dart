@@ -1,4 +1,5 @@
 import 'package:auto_route/annotations.dart';
+import 'package:codery/pages/profile/widgets/cell.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -9,7 +10,8 @@ class ProfilePage extends StatelessWidget {
 
   //头部
   Widget _buildHeader(context) {
-    return SizedBox(
+    return Container(
+      color: Colors.white,
       height: 165.h,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -56,30 +58,19 @@ class ProfilePage extends StatelessWidget {
 
   //第一个区域
   Widget _buildCells(context) {
-    return Row(
-      children: [
-        SizedBox(
-          height: 61.h,
-          child: Column(
-            children: [
-              Row(
-                children: [
-                  const Icon(Icons.abc_sharp),
-                  Text(
-                    "这里是信息",
-                    style: TextStyle(fontSize: 18.sp),
-                  ),
-                  const Text("Header"),
-                ],
-              ),
-            ],
+    return Container(
+      color: Colors.white,
+      child: CellWidget(
+          isArrowVisible: true,
+          rightPadding: 0.w,
+          leftWidget: const Icon(
+            Icons.card_membership,
+            color: Colors.black87,
           ),
-        ),
-        Divider(
-          height: 5.h,
-          color: Colors.red,
-        ),
-      ],
+          title: Text(
+            "My Details",
+            style: TextStyle(fontSize: 18.sp, color: Colors.black87),
+          )),
     );
   }
 
@@ -88,7 +79,6 @@ class ProfilePage extends StatelessWidget {
     return Container(
       height: 200,
       color: Colors.blue,
-      child: const Text("Header"),
     );
   }
 
@@ -108,7 +98,10 @@ class ProfilePage extends StatelessWidget {
               height: 1,
             ),
             _buildCells(context),
-            _buildSecondArea(context),
+            TextButton(onPressed: () {}, child: const Text("fdf")),
+            // const CellWidget(
+            //     title: Text("hfef"), isArrowVisible: true, rightPadding: 0),
+            // _buildSecondArea(context),
           ],
         ),
       ),
