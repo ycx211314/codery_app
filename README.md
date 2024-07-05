@@ -68,5 +68,5 @@ fonts:
 3. 运行命令实现
 
 ```bash
-iconfont_builder2 --from assets/fonts/iconfonts --to ./lib/iconfont.dart
+iconfont_builder2 --from assets/fonts/iconfonts --to ./lib/common/icons/iconfont.dart
 ```

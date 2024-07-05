@@ -31,11 +31,11 @@ class _ApplicationPageState extends State<ApplicationPage>
         activeIcon: Icon(Iconfont.huiyi),
         label: 'MESSAGE'),
     const BottomNavigationBarItem(
-        icon: Icon(Iconfont.geren),
+        icon: Icon(Iconfont.account),
         activeIcon: Icon(
           Iconfont.geren,
         ),
-        label: 'ME'),
+        label: 'Account'),
   ];
 
   @override

@@ -1,4 +1,5 @@
 import 'package:auto_route/annotations.dart';
+import 'package:codery/common/icons/iconfont.dart';
 import 'package:codery/pages/profile/widgets/cell.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -58,19 +59,150 @@ class ProfilePage extends StatelessWidget {
 
   //第一个区域
   Widget _buildCells(context) {
-    return Container(
-      color: Colors.white,
-      child: CellWidget(
-          isArrowVisible: true,
-          rightPadding: 0.w,
-          leftWidget: const Icon(
-            Icons.card_membership,
-            color: Colors.black87,
-          ),
-          title: Text(
-            "My Details",
-            style: TextStyle(fontSize: 18.sp, color: Colors.black87),
-          )),
+    return Column(
+      children: [
+        Container(
+          color: Colors.white,
+          child: CellWidget(
+              isArrowVisible: true,
+              rightPadding: 0.w,
+              leftWidget: const Icon(
+                Iconfont.personalcenter,
+                color: Colors.black87,
+              ),
+              title: Text(
+                "Profile Details",
+                style: TextStyle(fontSize: 18.sp, color: Colors.black87),
+              )),
+        ),
+        SizedBox(
+          height: 10.h,
+        ),
+        Container(
+          color: Colors.white,
+          child: CellWidget(
+              isArrowVisible: true,
+              rightPadding: 0.w,
+              leftWidget: const Icon(
+                Iconfont.form,
+                color: Colors.black87,
+              ),
+              title: Text(
+                "Orders",
+                style: TextStyle(fontSize: 18.sp, color: Colors.black87),
+              )),
+        ),
+        Divider(
+          height: 1.h,
+          indent: 25.w,
+          endIndent: 25.w,
+        ),
+        Container(
+          color: Colors.white,
+          child: CellWidget(
+              isArrowVisible: true,
+              rightPadding: 0.w,
+              leftWidget: const Icon(
+                Iconfont.map,
+                color: Colors.black87,
+              ),
+              title: Text(
+                "Delivery Address",
+                style: TextStyle(fontSize: 18.sp, color: Colors.black87),
+              )),
+        ),
+        Divider(
+          height: 1.h,
+          indent: 25.w,
+          endIndent: 25.w,
+        ),
+        Container(
+          color: Colors.white,
+          child: CellWidget(
+              isArrowVisible: true,
+              rightPadding: 0.w,
+              leftWidget: const Icon(
+                Icons.payment,
+                color: Colors.black87,
+              ),
+              title: Text(
+                "Payment Methods",
+                style: TextStyle(fontSize: 18.sp, color: Colors.black87),
+              )),
+        ),
+        SizedBox(
+          height: 10.h,
+        ),
+        Container(
+          color: Colors.white,
+          child: CellWidget(
+              isArrowVisible: true,
+              rightPadding: 0.w,
+              leftWidget: const Icon(
+                Icons.notifications,
+                color: Colors.black87,
+              ),
+              title: Text(
+                "Notifications",
+                style: TextStyle(fontSize: 18.sp, color: Colors.black87),
+              )),
+        ),
+        Divider(
+          height: 1.h,
+          indent: 25.w,
+          endIndent: 25.w,
+        ),
+        Container(
+          color: Colors.white,
+          child: CellWidget(
+              isArrowVisible: true,
+              rightPadding: 0.w,
+              leftWidget: const Icon(
+                Icons.help,
+                color: Colors.black87,
+              ),
+              title: Text(
+                "Help",
+                style: TextStyle(fontSize: 18.sp, color: Colors.black87),
+              )),
+        ),
+        Divider(
+          height: 1.h,
+          indent: 25.w,
+          endIndent: 25.w,
+        ),
+        Container(
+          color: Colors.white,
+          child: CellWidget(
+              isArrowVisible: true,
+              rightPadding: 0.w,
+              leftWidget: const Icon(
+                Icons.info,
+                color: Colors.black87,
+              ),
+              title: Text(
+                "About",
+                style: TextStyle(fontSize: 18.sp, color: Colors.black87),
+              )),
+        ),
+        SizedBox(
+          height: 10.h,
+        ),
+        Container(
+          color: Colors.white,
+          child: CellWidget(
+              isArrowVisible: true,
+              rightPadding: 0.w,
+              leftWidget: const Icon(
+                Icons.settings,
+                color: Colors.black87,
+              ),
+              title: Text(
+                "Settings",
+                style: TextStyle(fontSize: 18.sp, color: Colors.black87),
+              )),
+        ),
+      ],
     );
   }
 
@@ -94,14 +226,44 @@ class ProfilePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             _buildHeader(context),
-            const Divider(
-              height: 1,
+            SizedBox(
+              height: 10.h,
             ),
             _buildCells(context),
-            TextButton(onPressed: () {}, child: const Text("fdf")),
-            // const CellWidget(
-            //     title: Text("hfef"), isArrowVisible: true, rightPadding: 0),
-            // _buildSecondArea(context),
+            Expanded(
+                child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Container(
+                  padding: EdgeInsets.only(left: 25.w, right: 25.w, top: 25.h),
+                  height: 67.h,
+                  child: ElevatedButton(
+                      style: ButtonStyle(
+                        //圆角矩形
+                        shape: WidgetStateProperty.all(RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(9.h))),
+                        //背景颜色
+                        backgroundColor:
+                            WidgetStateProperty.all(Colors.grey.shade200),
+                        //阴影
+                        elevation: WidgetStateProperty.all(0),
+                      ),
+                      onPressed: () {},
+                      child: const Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Icon(Icons.logout),
+                          Expanded(
+                              child: Text(
+                            "Log Out",
+                            textAlign: TextAlign.center,
+                          )),
+                        ],
+                      )),
+                ),
+              ],
+            ))
           ],
         ),
       ),
