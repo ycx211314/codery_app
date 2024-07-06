@@ -63,10 +63,8 @@ class MyApp extends StatelessWidget {
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (context, child) {
-          // MaterialApp.router(routerConfig: _appRouter.config())
           return MaterialApp.router(
             title: 'Codery APP',
-            // home: const ApplicationPage(),
             routerConfig: _appRouter.config(),
             theme: coderyTheme,
             locale: Locale(Intl.getCurrentLocale()),

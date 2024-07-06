@@ -27,9 +27,13 @@ class _ApplicationPageState extends State<ApplicationPage>
         activeIcon: Icon(Iconfont.rili),
         label: 'DEMO'),
     const BottomNavigationBarItem(
-        icon: Icon(Iconfont.huiyi),
-        activeIcon: Icon(Iconfont.huiyi),
-        label: 'MESSAGE'),
+        icon: Icon(Iconfont.cart),
+        activeIcon: Icon(Iconfont.cart),
+        label: 'Cart'),
+    const BottomNavigationBarItem(
+        icon: Icon(Iconfont.cart),
+        activeIcon: Icon(Iconfont.cart),
+        label: 'Cart'),
     const BottomNavigationBarItem(
         icon: Icon(Iconfont.account),
         activeIcon: Icon(
@@ -73,9 +77,12 @@ class _ApplicationPageState extends State<ApplicationPage>
         Container(
           color: Colors.red,
         ),
+        Container(
+          color: Colors.orange,
+        ),
         const DemoPage(),
         Container(
-          color: Colors.green,
+          color: Colors.red,
         ),
         const ProfilePage(),
       ],
@@ -107,16 +114,17 @@ class _ApplicationPageState extends State<ApplicationPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        // appBar: _buildAppBar() as PreferredSizeWidget?,
-        body: _buildPageView(),
-        bottomNavigationBar: _buildBottomNavigationBar(),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            // print('点击了');
-          },
-          child: const Icon(Icons.add),
-        ),
-        floatingActionButtonLocation:
-            FloatingActionButtonLocation.centerDocked);
+      // appBar: _buildAppBar() as PreferredSizeWidget?,
+      body: _buildPageView(),
+      bottomNavigationBar: _buildBottomNavigationBar(),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {
+      //     // print('点击了');
+      //   },
+      //   child: const Icon(Icons.add),
+      // ),
+      // floatingActionButtonLocation:
+      //     FloatingActionButtonLocation.centerDocked
+    );
   }
 }

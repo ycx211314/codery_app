@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -58,7 +56,7 @@ class CellWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: height ?? 60.h,
+      height: height ?? 52.h,
       child: TextButton(
         onPressed: onPressed,
         style: TextButton.styleFrom(
