@@ -28,6 +28,13 @@ class DemoPage extends StatelessWidget {
       body: Center(
           child: ListView(
         children: [
+          FilledButton(
+            onPressed: () {
+              //navigator导航到一个页面\
+              context.router.navigate(SignInRoute(onResult: (success) {}));
+            },
+            child: const Text("Login"),
+          ),
           // AdmobBanner(
           //   adUnitId: AdmobBanner.testAdUnitId,
           //   adSize: AdmobBannerSize.FULL_BANNER,

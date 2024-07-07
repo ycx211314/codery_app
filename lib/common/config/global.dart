@@ -6,5 +6,5 @@ class Config {
   static const int connectTimeout = 6;
   static const int receiveTimeout = 6;
 
-  static const Size designSize = Size(414, 896);
+  static const Size designSize = Size(375, 812);
 }
