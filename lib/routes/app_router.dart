@@ -4,6 +4,7 @@ import 'package:codery/pages/demo/demo_page.dart';
 import 'package:codery/pages/profile/profile_page.dart';
 import 'package:codery/pages/sample/sliver_app_bar_demo_page.dart';
 import 'package:codery/pages/sign_in/sign_in_page.dart';
+import 'package:codery/pages/sign_up/sign_up_page.dart';
 import 'package:codery/routes/auth_guard.dart';
 import 'package:flutter/material.dart';
 part 'app_router.gr.dart';
@@ -16,6 +17,7 @@ class AppRouter extends _$AppRouter {
         /// AutoRoute(path: '', page: UsersRoute.page),
         AutoRoute(path: '/', page: ApplicationRoute.page, initial: true),
         AutoRoute(path: '/login', page: SignInRoute.page),
+        AutoRoute(path: '/register', page: SignUpRoute.page),
         AutoRoute(
             path: '/sliverApp', page: SliverApp.page, guards: [AuthGuard()]),
       ];

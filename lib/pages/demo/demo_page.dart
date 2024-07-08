@@ -35,6 +35,14 @@ class DemoPage extends StatelessWidget {
             },
             child: const Text("Login"),
           ),
+          FilledButton(
+            onPressed: () {
+              //navigator导航到一个页面\
+              context.router.navigateNamed("/register");
+              // context.router.navigate(const SignUpRoute());
+            },
+            child: const Text("Resigter"),
+          ),
           // AdmobBanner(
           //   adUnitId: AdmobBanner.testAdUnitId,
           //   adSize: AdmobBannerSize.FULL_BANNER,

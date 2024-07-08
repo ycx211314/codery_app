@@ -1,7 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:codery/common/icons/iconfont.dart';
 import 'package:codery/common/utils/color_helper.dart';
+import 'package:codery/data/models/message.dart';
 import 'package:codery/data/provider/auth_provider.dart';
+import 'package:codery/respository/user_respository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
@@ -199,9 +201,9 @@ class _SignInPageState extends State<SignInPage> {
         onPressed: () {
           // 执行登录逻辑
           final authProvider =
-              Provider.of<AuthProvider>(context, listen: false);
+              Provider.of<AuthorityProvider>(context, listen: false);
           authProvider.signIn();
-          hanlder_sign_in();
+          hanlder_sign_in(context);
           //调用 onResult 回调函数
         },
         child: const Text("Sign in "),
@@ -398,11 +400,15 @@ class _SignInPageState extends State<SignInPage> {
     return null;
   }
 
-  hanlder_sign_in() {
+  hanlder_sign_in(BuildContext context) async {
     if (_formKey.currentState?.validate() ?? false) {
-      // 验证通过，执行登录逻辑
-      print("fe");
-      // ...
+      Message msg = await UserRespository.login(
+          _emailController.text, _passwordController.text, context);
+      if (msg.code == '0000') {
+        context.router.maybePop();
+      } else {
+        print(msg.message);
+      }
     }
   }
 

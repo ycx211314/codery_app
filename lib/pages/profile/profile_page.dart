@@ -1,11 +1,15 @@
-import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:codery/common/icons/iconfont.dart';
 import 'package:codery/common/utils/color_helper.dart';
+import 'package:codery/data/provider/auth_provider.dart';
 import 'package:codery/pages/profile/widgets/cell.dart';
 import 'package:codery/pages/profile/widgets/profile_header.dart';
+import 'package:codery/respository/user_respository.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 
 @RoutePage()
 class ProfilePage extends StatelessWidget {
@@ -13,10 +17,17 @@ class ProfilePage extends StatelessWidget {
 
   //头部
   Widget _buildHeader(context) {
-    return const ProfileHeader(
-        name: "Codery",
-        email: "test@test.com",
-        avatarUrl: "assets/img/touxiang4.png");
+    AuthorityProvider authProvider = Provider.of<AuthorityProvider>(context);
+    User? user = authProvider.user;
+    if (user == null) {
+      return const ProfileHeader(
+          name: "未登录", email: "", avatarUrl: "assets/img/touxiang4.png");
+    } else {
+      return ProfileHeader(
+          name: user.displayName ?? "None",
+          email: user.email ?? "None",
+          avatarUrl: user.photoURL ?? "assets/img/touxiang4.png");
+    }
   }
 
   //第一个区域
@@ -192,7 +203,9 @@ class ProfilePage extends StatelessWidget {
                 //阴影
                 elevation: WidgetStateProperty.all(0),
               ),
-              onPressed: () {},
+              onPressed: () {
+                UserRespository.loginOut(context);
+              },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,

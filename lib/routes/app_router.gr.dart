@@ -27,7 +27,7 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const DemoPage(),
       );
     },
-    MeRoute.name: (routeData) {
+    ProfileRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const ProfilePage(),
@@ -41,6 +41,12 @@ abstract class _$AppRouter extends RootStackRouter {
           key: args.key,
           onResult: args.onResult,
         ),
+      );
+    },
+    SignUpRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const SignUpPage(),
       );
     },
     SliverApp.name: (routeData) {
@@ -82,14 +88,14 @@ class DemoRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [ProfilePage]
-class MeRoute extends PageRouteInfo<void> {
-  const MeRoute({List<PageRouteInfo>? children})
+class ProfileRoute extends PageRouteInfo<void> {
+  const ProfileRoute({List<PageRouteInfo>? children})
       : super(
-          MeRoute.name,
+          ProfileRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'MeRoute';
+  static const String name = 'ProfileRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
@@ -129,6 +135,20 @@ class SignInRouteArgs {
   String toString() {
     return 'SignInRouteArgs{key: $key, onResult: $onResult}';
   }
+}
+
+/// generated route for
+/// [SignUpPage]
+class SignUpRoute extends PageRouteInfo<void> {
+  const SignUpRoute({List<PageRouteInfo>? children})
+      : super(
+          SignUpRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SignUpRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
