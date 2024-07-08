@@ -12,21 +12,32 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
 @RoutePage()
-class ProfilePage extends StatelessWidget {
+class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
+
+  @override
+  _ProfilePageState createState() => _ProfilePageState();
+}
+
+class _ProfilePageState extends State<ProfilePage> {
+  User? user;
+  @override
+  void initState() {
+    super.initState();
+  }
 
   //头部
   Widget _buildHeader(context) {
     AuthorityProvider authProvider = Provider.of<AuthorityProvider>(context);
-    User? user = authProvider.user;
+    user = authProvider.user;
     if (user == null) {
       return const ProfileHeader(
           name: "未登录", email: "", avatarUrl: "assets/img/touxiang4.png");
     } else {
       return ProfileHeader(
-          name: user.displayName ?? "None",
-          email: user.email ?? "None",
-          avatarUrl: user.photoURL ?? "assets/img/touxiang4.png");
+          name: user!.displayName ?? "None",
+          email: user!.email ?? "None",
+          avatarUrl: "assets/img/touxiang4.png");
     }
   }
 

@@ -22,7 +22,7 @@ class AuthorityProvider with ChangeNotifier {
   }
 
   void logout() {
-    _signInSuccess = true;
+    _signInSuccess = false;
     _user = null;
     notifyListeners();
   }

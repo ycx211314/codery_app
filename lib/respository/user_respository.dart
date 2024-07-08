@@ -29,7 +29,7 @@ class UserRespository {
     String code = '0000';
     String message = 'success';
     User? user;
-    FirebaseAuth.instance
+    await FirebaseAuth.instance
         .signInWithEmailAndPassword(email: email, password: password)
         .then((credential) {
       User? user = credential.user;
@@ -46,11 +46,15 @@ class UserRespository {
           message = 'No user found for that email.';
         } else if (e.code == 'wrong-password') {
           message = 'Wrong password provided for that user.';
+        } else if (e.code == 'invalid-credential') {
+          message = 'The supplied auth credential is malformed or has expired.';
         }
+      } else {
+        message = '未知错误';
       }
       code = '0001';
     });
-    return Message(code, "success", "", user);
+    return Message(code, message, "", user);
   }
 
 //退出登录

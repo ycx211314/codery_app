@@ -84,7 +84,7 @@ class _ApplicationPageState extends State<ApplicationPage>
         Container(
           color: Colors.red,
         ),
-        const ProfilePage(),
+        ProfilePage(),
       ],
     );
   }
