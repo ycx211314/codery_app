@@ -257,7 +257,7 @@ class _SignInPageState extends State<SignInPage> {
                           color: ColorHelper.hexToColor("#EBF0FF"),
                           width: 1.w)),
                   onPressed: () {
-                    print("click");
+                    _handle_sign_in_with_google(context);
                   },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -294,7 +294,7 @@ class _SignInPageState extends State<SignInPage> {
                           color: ColorHelper.hexToColor("#EBF0FF"),
                           width: 1.w)),
                   onPressed: () {
-                    print("click");
+                    _handle_sign_in_with_apple(context);
                   },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -332,7 +332,7 @@ class _SignInPageState extends State<SignInPage> {
               onTap: () {
                 print("goto register page");
               },
-              child: Text("Don't have an account?",
+              child: Text("Forgot Password?",
                   style: TextStyle(
                       color: ColorHelper.hexToColor("#40BFFF"),
                       fontSize: 12.sp,
@@ -349,7 +349,7 @@ class _SignInPageState extends State<SignInPage> {
                         fontWeight: FontWeight.w600)),
                 GestureDetector(
                   onTap: () {
-                    print("goto register page");
+                    context.router.pushNamed("/register");
                   },
                   child: Text("Register",
                       style: TextStyle(
@@ -409,6 +409,24 @@ class _SignInPageState extends State<SignInPage> {
       } else {
         print(msg.message);
       }
+    }
+  }
+
+  _handle_sign_in_with_google(BuildContext context) async {
+    Message msg = await UserRespository.loginWithGoogle(context);
+    if (msg.code == '0000') {
+      context.router.maybePop();
+    } else {
+      print(msg.message);
+    }
+  }
+
+  _handle_sign_in_with_apple(BuildContext context) async {
+    Message msg = await UserRespository.loginWithApple(context);
+    if (msg.code == '0000') {
+      context.router.maybePop();
+    } else {
+      print(msg.message);
     }
   }
 

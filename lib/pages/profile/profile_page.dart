@@ -1,11 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:codery/common/icons/iconfont.dart';
 import 'package:codery/common/utils/color_helper.dart';
+import 'package:codery/data/models/account.dart';
 import 'package:codery/data/provider/auth_provider.dart';
 import 'package:codery/pages/profile/widgets/cell.dart';
 import 'package:codery/pages/profile/widgets/profile_header.dart';
 import 'package:codery/respository/user_respository.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -20,7 +20,7 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  User? user;
+  Account? user;
   @override
   void initState() {
     super.initState();
@@ -35,7 +35,7 @@ class _ProfilePageState extends State<ProfilePage> {
           name: "未登录", email: "", avatarUrl: "assets/img/touxiang4.png");
     } else {
       return ProfileHeader(
-          name: user!.displayName ?? "None",
+          name: user!.name ?? "None",
           email: user!.email ?? "None",
           avatarUrl: "assets/img/touxiang4.png");
     }

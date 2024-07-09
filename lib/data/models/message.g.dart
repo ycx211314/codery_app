@@ -10,7 +10,7 @@ Message<T> _$MessageFromJson<T>(Map<String, dynamic> json) => Message<T>(
       json['code'] as String,
       json['message'] as String,
       json['info'] as String,
-      json['data'] as T?,
+      json['data'],
     );
 
 Map<String, dynamic> _$MessageToJson<T>(Message<T> instance) =>

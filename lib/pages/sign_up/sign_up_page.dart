@@ -4,6 +4,7 @@ import 'package:codery/common/utils/color_helper.dart';
 import 'package:codery/data/models/message.dart';
 import 'package:codery/data/provider/auth_provider.dart';
 import 'package:codery/respository/user_respository.dart';
+import 'package:codery/routes/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
@@ -332,7 +333,8 @@ class _SignUpPageState extends State<SignUpPage> {
                         fontWeight: FontWeight.w600)),
                 GestureDetector(
                   onTap: () {
-                    print("goto register page");
+                    context.router
+                        .navigate(SignInRoute(onResult: (success) {}));
                   },
                   child: Text("Sign in",
                       style: TextStyle(
