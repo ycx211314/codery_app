@@ -70,3 +70,9 @@ fonts:
 ```bash
 iconfont_builder2 --from assets/fonts/iconfonts --to ./lib/common/icons/iconfont.dart
 ```
+
+# auto_route
+
+```
+dart run build_runner watch
+```

@@ -4,6 +4,7 @@ import 'package:codery/common/utils/color_helper.dart';
 import 'package:codery/data/models/message.dart';
 import 'package:codery/data/provider/auth_provider.dart';
 import 'package:codery/respository/user_respository.dart';
+import 'package:codery/routes/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
@@ -330,7 +331,8 @@ class _SignInPageState extends State<SignInPage> {
             SizedBox(height: 16.h),
             GestureDetector(
               onTap: () {
-                print("goto register page");
+                // context.router.replaceNamed("/forget_password");
+                context.router.pushNamed("/forgetPassword");
               },
               child: Text("Forgot Password?",
                   style: TextStyle(

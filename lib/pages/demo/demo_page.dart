@@ -38,8 +38,8 @@ class DemoPage extends StatelessWidget {
           FilledButton(
             onPressed: () {
               //navigator导航到一个页面\
-              context.router.navigateNamed("/register");
-              // context.router.navigate(const SignUpRoute());
+              // context.router.navigateNamed("/register");
+              context.router.navigate(const ForgetPasswordRoute());
             },
             child: const Text("Resigter"),
           ),
