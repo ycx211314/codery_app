@@ -39,6 +39,16 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const ProfilePage(),
       );
     },
+    ResetPasswordRoute.name: (routeData) {
+      final args = routeData.argsAs<ResetPasswordRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: ResetPasswordPage(
+          key: args.key,
+          resetPasswordType: args.resetPasswordType,
+        ),
+      );
+    },
     SignInRoute.name: (routeData) {
       final args = routeData.argsAs<SignInRouteArgs>();
       return AutoRoutePage<dynamic>(
@@ -118,6 +128,44 @@ class ProfileRoute extends PageRouteInfo<void> {
   static const String name = 'ProfileRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [ResetPasswordPage]
+class ResetPasswordRoute extends PageRouteInfo<ResetPasswordRouteArgs> {
+  ResetPasswordRoute({
+    Key? key,
+    required ResetPasswordType resetPasswordType,
+    List<PageRouteInfo>? children,
+  }) : super(
+          ResetPasswordRoute.name,
+          args: ResetPasswordRouteArgs(
+            key: key,
+            resetPasswordType: resetPasswordType,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'ResetPasswordRoute';
+
+  static const PageInfo<ResetPasswordRouteArgs> page =
+      PageInfo<ResetPasswordRouteArgs>(name);
+}
+
+class ResetPasswordRouteArgs {
+  const ResetPasswordRouteArgs({
+    this.key,
+    required this.resetPasswordType,
+  });
+
+  final Key? key;
+
+  final ResetPasswordType resetPasswordType;
+
+  @override
+  String toString() {
+    return 'ResetPasswordRouteArgs{key: $key, resetPasswordType: $resetPasswordType}';
+  }
 }
 
 /// generated route for

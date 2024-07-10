@@ -2,6 +2,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:codery/common/icons/iconfont.dart';
 import 'package:codery/common/utils/color_helper.dart';
 import 'package:codery/common/utils/common_validator.dart';
+import 'package:codery/pages/sign_in/reset_password/reset_password_page.dart';
+import 'package:codery/routes/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:otp_text_field/otp_field.dart';
@@ -43,7 +45,8 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
       child: Form(
         key: _formKey,
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Text(
               "Your registed Email",
@@ -62,6 +65,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
               child: TextFormField(
                 controller: _emailController,
                 focusNode: _focusNodeEmaiL,
+                keyboardType: TextInputType.emailAddress,
                 validator: validateEmail,
                 style: TextStyle(
                     fontSize: 12.sp, color: ColorHelper.hexToColor("#9098B1")),
@@ -92,6 +96,15 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                 ),
               ),
             ),
+            SizedBox(
+              height: 20.h,
+            ),
+            FilledButton(
+              onPressed: () {
+                _handle_next_action(context);
+              },
+              child: const Text("Send Validator Code"),
+            ),
           ],
         ),
       ),
@@ -118,12 +131,19 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                 child: OTPTextField(
                   length: 4,
                   width: 400.w,
+                  keyboardType: TextInputType.number,
                   fieldWidth: 50,
                   style: const TextStyle(fontSize: 17),
                   textFieldAlignment: MainAxisAlignment.spaceAround,
                   fieldStyle: FieldStyle.box,
+                  onChanged: (value) {
+                    print("Changed: $value");
+                  },
                   onCompleted: (pin) {
-                    print("Completed: $pin");
+                    if (pin == "2222") {
+                      context.router.navigate(ResetPasswordRoute(
+                          resetPasswordType: ResetPasswordType.oldPassword));
+                    }
                   },
                 ),
               ),
@@ -164,7 +184,6 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
     if (_currentIndex == 0) {
       //第一步验证邮箱
       if (_formKey.currentState?.validate() ?? false) {
-        //TODO 验证邮箱是否存在
         setState(() {
           _currentIndex = 1;
         });
@@ -186,12 +205,6 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
           _buildEmailContainer(context),
           _buildValidatorCodeContainer(context)
         ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          _handle_next_action(context);
-        },
-        child: const Icon(Icons.add),
       ),
     );
   }
