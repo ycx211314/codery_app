@@ -142,7 +142,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                   onCompleted: (pin) {
                     if (pin == "2222") {
                       context.router.navigate(ResetPasswordRoute(
-                          resetPasswordType: ResetPasswordType.oldPassword));
+                          resetPasswordType: ResetPasswordType.email));
                     }
                   },
                 ),
@@ -197,6 +197,12 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
       appBar: AppBar(
         title: const Text('Retrieve password'),
         centerTitle: true,
+        bottom: const PreferredSize(
+          preferredSize: Size.fromHeight(1.0), // 高度等于边线的厚度
+          child: Divider(
+            thickness: 1.0, // 边线厚度
+          ),
+        ),
       ),
       backgroundColor: Colors.white,
       body: IndexedStack(

@@ -34,4 +34,18 @@ ThemeData coderyTheme = ThemeData(
     )),
     backgroundColor: WidgetStateProperty.all<Color>(primaryColor),
   )),
+  appBarTheme: const AppBarTheme(
+    shadowColor: Colors.black,
+  ),
+  colorScheme: ColorScheme(
+    primary: primaryColor,
+    onPrimary: Colors.white,
+    secondary: Colors.green,
+    onSecondary: Colors.white,
+    surface: Colors.white,
+    onSurface: Colors.black,
+    error: Colors.red,
+    onError: Colors.white, brightness: Brightness.light,
+    // 可以添加更多颜色，如onBackground、onErrorContainer等
+  ),
 );
