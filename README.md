@@ -76,3 +76,7 @@ iconfont_builder2 --from assets/fonts/iconfonts --to ./lib/common/icons/iconfont
 ```
 dart run build_runner watch
 ```
+```
+1:145080085678:android:db89b4df224660c422513f
+```
+firebase crashlytics:symbols:upload --app=1:145080085678:android:db89b4df224660c422513f PATH/TO/symbols

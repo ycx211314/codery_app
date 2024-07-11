@@ -38,6 +38,13 @@ class DemoPage extends StatelessWidget {
           FilledButton(
             onPressed: () {
               //navigator导航到一个页面\
+              throw Exception("dfe");
+            },
+            child: const Text("Crash"),
+          ),
+          FilledButton(
+            onPressed: () {
+              //navigator导航到一个页面\
               // context.router.navigateNamed("/register");
               context.router.navigate(const ForgetPasswordRoute());
             },

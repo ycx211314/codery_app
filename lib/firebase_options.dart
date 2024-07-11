@@ -63,6 +63,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '145080085678',
     projectId: 'codery-4853e',
     storageBucket: 'codery-4853e.appspot.com',
+    iosClientId: '145080085678-tv9ukl5t9lodvoebr12tg4l346jm9i7f.apps.googleusercontent.com',
     iosBundleId: 'online.yangcoder.app',
   );
+
 }

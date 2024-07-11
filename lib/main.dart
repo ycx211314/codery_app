@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:ui';
 
 // import 'package:admob_flutter/admob_flutter.dart';
 import 'package:codery/common/config/global.dart';
@@ -8,6 +9,7 @@ import 'package:codery/firebase_options.dart';
 import 'package:codery/generated/l10n.dart';
 import 'package:codery/routes/app_router.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -36,7 +38,14 @@ Future<void> init() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-
+  FlutterError.onError = (errorDetails) {
+    FirebaseCrashlytics.instance.recordFlutterFatalError(errorDetails);
+  };
+  // Pass all uncaught asynchronous errors that aren't handled by the Flutter framework to Crashlytics
+  PlatformDispatcher.instance.onError = (error, stack) {
+    FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
+    return true;
+  };
   // await Admob.requestTrackingAuthorization();
   // Admob.initialize();
   // Admob.initialize(testDeviceIds: ['DB204A68-64E6-450A-920E-ED6E1AF6A3DF']);

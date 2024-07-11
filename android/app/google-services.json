@@ -12,7 +12,12 @@
           "package_name": "online.yangcoder.app"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "145080085678-cqi18gp6jhl2cd14o4ul36rqlm56hfov.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyC6WU_CfdkIkITeHIiwnGRdsh06jCI49sE"
@@ -20,7 +25,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "145080085678-cqi18gp6jhl2cd14o4ul36rqlm56hfov.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "145080085678-tv9ukl5t9lodvoebr12tg4l346jm9i7f.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "online.yangcoder.app"
+              }
+            }
+          ]
         }
       }
     }
