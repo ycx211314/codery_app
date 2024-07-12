@@ -33,7 +33,7 @@ class _ApplicationPageState extends State<ApplicationPage>
     const BottomNavigationBarItem(
         icon: Icon(Iconfont.cart),
         activeIcon: Icon(Iconfont.cart),
-        label: 'Cart'),
+        label: 'Message'),
     const BottomNavigationBarItem(
         icon: Icon(Iconfont.account),
         activeIcon: Icon(
@@ -84,7 +84,7 @@ class _ApplicationPageState extends State<ApplicationPage>
         Container(
           color: Colors.red,
         ),
-        ProfilePage(),
+        const ProfilePage(),
       ],
     );
   }
