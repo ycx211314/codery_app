@@ -1,3 +1,4 @@
+import 'package:codery/common/icons/iconfont.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -44,8 +45,7 @@ class CellWidget extends StatelessWidget {
                         alignment: Alignment.centerRight, child: rightWidget!)),
               SizedBox(width: isArrowVisible ? 12.w : rightPadding),
               if (isArrowVisible)
-                Icon(Icons.arrow_forward_ios,
-                    color: Colors.black87, size: 16.sp),
+                Icon(Iconfont.more, color: Colors.black87, size: 16.sp),
             ],
           ),
         ),

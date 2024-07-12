@@ -1,3 +1,4 @@
+//验证邮箱
 String? validateEmail(String? value) {
   if (value == null || value.isEmpty) {
     return 'Please enter your email';
@@ -11,6 +12,18 @@ String? validateEmail(String? value) {
   return null;
 }
 
+//验证邮箱
+String? validateLenth(String? value, int length) {
+  if (value == null || value.isEmpty) {
+    return 'Please enter';
+  }
+  if (value.length < length) {
+    return 'Must be at least $length characters long';
+  }
+  return null;
+}
+
+//验证密码
 String? validatePassword(String? value) {
   if (value == null || value.isEmpty) {
     return 'Please enter your password';
@@ -35,6 +48,7 @@ String? validatePassword(String? value) {
   return null;
 }
 
+//验证密码是否匹配
 String? validateRepeatPassword(String? value, String? value1) {
   if (value == null || value.isEmpty) {
     return 'Please enter your password';

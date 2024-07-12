@@ -85,17 +85,21 @@ class UserRespository {
       ],
     );
     await googleSignIn.signIn().then((googleSignInAccount) {
-      // print(googleSignInAccount);
-      Account? user = Account(
-          name: googleSignInAccount!.displayName!,
-          email: googleSignInAccount.email,
-          password: googleSignInAccount.id,
-          fromType: 2,
-          photoUrl: googleSignInAccount.photoUrl);
-      AuthorityProvider authProvider =
-          Provider.of<AuthorityProvider>(context, listen: false);
-      authProvider.setUser(user);
-      authProvider.signIn();
+      if (googleSignInAccount != null) {
+        Account? user = Account(
+            name: googleSignInAccount.displayName!,
+            email: googleSignInAccount.email,
+            password: googleSignInAccount.id,
+            fromType: 2,
+            photoUrl: googleSignInAccount.photoUrl);
+        AuthorityProvider authProvider =
+            Provider.of<AuthorityProvider>(context, listen: false);
+        authProvider.setUser(user);
+        authProvider.signIn();
+      } else {
+        code = '0001';
+        message = '登录失败';
+      }
     }).onError((error, stackTrace) {
       code = '0001';
       message = error.toString();

@@ -64,6 +64,7 @@ class _CustomerInputWidgetState extends State<CustomerInputWidget> {
       prefixIcon = Icon(
         widget.icon!,
         size: 18.sp,
+        color: iconColor,
       );
     }
     return Container(
@@ -84,8 +85,8 @@ class _CustomerInputWidgetState extends State<CustomerInputWidget> {
               ? IconButton(
                   icon: Icon(
                     Icons.visibility,
-                    color: iconColor,
                     size: 18.sp,
+                    color: defaultColor,
                   ),
                   onPressed: () {
                     setState(() {

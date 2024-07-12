@@ -4,6 +4,7 @@ import 'package:codery/common/utils/color_helper.dart';
 import 'package:codery/common/utils/common_validator.dart';
 import 'package:codery/pages/sign_in/reset_password/reset_password_page.dart';
 import 'package:codery/routes/app_router.dart';
+import 'package:codery/widgets/customer_input.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:otp_text_field/otp_field.dart';
@@ -22,18 +23,9 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
 
   final TextEditingController _emailController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
-  final FocusNode _focusNodeEmaiL = FocusNode();
-  Color _emailIconColor = ColorHelper.hexToColor("#9098B1");
 
   @override
   void initState() {
-    _focusNodeEmaiL.addListener(() {
-      setState(() {
-        _emailIconColor = _focusNodeEmaiL.hasFocus
-            ? ColorHelper.hexToColor("#40BFFF")
-            : ColorHelper.hexToColor("#9098B1");
-      });
-    });
     super.initState();
   }
 
@@ -59,42 +51,12 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
             SizedBox(
               height: 6.h,
             ),
-            Container(
-              // height: 48.h,
-              color: Colors.white,
-              child: TextFormField(
-                controller: _emailController,
-                focusNode: _focusNodeEmaiL,
-                keyboardType: TextInputType.emailAddress,
-                validator: validateEmail,
-                style: TextStyle(
-                    fontSize: 12.sp, color: ColorHelper.hexToColor("#9098B1")),
-                decoration: InputDecoration(
-                  hintText: "Enter your email",
-                  helperText: "the email address to retrieve your password",
-                  hintStyle: TextStyle(
-                      color: ColorHelper.hexToColor("#9098B1"),
-                      fontSize: 12.sp),
-                  prefixIcon: Icon(
-                    Iconfont.email,
-                    size: 18.sp,
-                    color: _emailIconColor,
-                  ),
-                  border: OutlineInputBorder(
-                      borderSide:
-                          BorderSide(color: ColorHelper.hexToColor("#EBF0FF"))),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                        color: ColorHelper.hexToColor("#40BFFF")), // 启用状态下的边框颜色
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                        color: ColorHelper.hexToColor("#40BFFF")), // 获得焦点时的边框颜色
-                  ),
-                  errorStyle: const TextStyle(height: 0),
-                  contentPadding: EdgeInsets.symmetric(vertical: 16.h),
-                ),
-              ),
+            CustomerInputWidget(
+              textEditingController: _emailController,
+              hintText: "Enter your email",
+              icon: Iconfont.email,
+              helperText: "the email address to retrieve your password",
+              validator: validateEmail,
             ),
             SizedBox(
               height: 20.h,

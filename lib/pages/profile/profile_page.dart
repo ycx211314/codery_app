@@ -51,23 +51,6 @@ class _ProfilePageState extends State<ProfilePage> {
               isArrowVisible: true,
               rightPadding: 0.w,
               leftWidget: const Icon(
-                Iconfont.personalcenter,
-                color: Colors.black87,
-              ),
-              title: Text(
-                "Profile Details",
-                style: TextStyle(fontSize: 18.sp, color: Colors.black87),
-              )),
-        ),
-        Divider(
-          thickness: 10.h,
-        ),
-        Container(
-          color: Colors.white,
-          child: CellWidget(
-              isArrowVisible: true,
-              rightPadding: 0.w,
-              leftWidget: const Icon(
                 Iconfont.form,
                 color: Colors.black87,
               ),
@@ -115,7 +98,7 @@ class _ProfilePageState extends State<ProfilePage> {
               )),
         ),
         Divider(
-          thickness: 10.h,
+          thickness: 5.h,
         ),
         Container(
           color: Colors.white,
@@ -170,7 +153,7 @@ class _ProfilePageState extends State<ProfilePage> {
               )),
         ),
         Divider(
-          thickness: 10.h,
+          thickness: 5.h,
         ),
         Container(
           color: Colors.white,
@@ -187,7 +170,7 @@ class _ProfilePageState extends State<ProfilePage> {
               )),
         ),
         Divider(
-          height: 1.h,
+          thickness: 5.h,
         ),
       ],
     );

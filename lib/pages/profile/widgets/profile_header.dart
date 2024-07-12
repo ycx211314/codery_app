@@ -68,11 +68,6 @@ class ProfileHeader extends StatelessWidget {
                           SizedBox(
                             width: 10.w,
                           ),
-                          Icon(
-                            Iconfont.edit,
-                            size: 15.sp,
-                            color: Theme.of(context).primaryColor,
-                          )
                         ],
                       ),
                       SizedBox(height: 5.h),
@@ -86,6 +81,12 @@ class ProfileHeader extends StatelessWidget {
               ),
             ),
           ),
+          Container(
+              margin: EdgeInsets.fromLTRB(0, 0, 16.w, 45.h),
+              child: Icon(
+                Iconfont.more,
+                size: 16.sp,
+              ))
         ],
       ),
     );

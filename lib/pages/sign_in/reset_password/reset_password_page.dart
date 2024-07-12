@@ -137,7 +137,6 @@ class ResetPasswordPage extends StatelessWidget {
                 Container(
                   margin:
                       EdgeInsets.only(left: 16.w, right: 16.w, bottom: 24.h),
-                  height: 57.h,
                   child: FilledButton(
                     onPressed: () {
                       //调用 onResult 回调函数
