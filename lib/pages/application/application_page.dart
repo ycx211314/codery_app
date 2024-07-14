@@ -1,8 +1,13 @@
 import 'package:auto_route/annotations.dart';
 import 'package:codery/common/icons/iconfont.dart';
+import 'package:codery/pages/contacts/contacts_page.dart';
 import 'package:codery/pages/demo/demo_page.dart';
+<<<<<<< HEAD
 import 'package:codery/pages/im/contacts/contact_page.dart';
 import 'package:codery/pages/im/conversations/conversation_page.dart';
+=======
+import 'package:codery/pages/message/message_list_page_page.dart';
+>>>>>>> 27682a9 (✨ feat: 添加了腾讯IM)
 import 'package:codery/pages/profile/profile_page.dart';
 import 'package:flutter/material.dart';
 
@@ -27,13 +32,13 @@ class _ApplicationPageState extends State<ApplicationPage>
     const BottomNavigationBarItem(
         icon: Icon(Iconfont.rili),
         activeIcon: Icon(Iconfont.rili),
-        label: 'DEMO'),
+        label: 'Contacts'),
     const BottomNavigationBarItem(
         icon: Icon(Iconfont.cart),
         activeIcon: Icon(Iconfont.cart),
         label: 'Cart'),
     const BottomNavigationBarItem(
-        icon: Icon(Iconfont.cart),
+        icon: Icon(Iconfont.comments),
         activeIcon: Icon(Iconfont.cart),
         label: 'Message'),
     const BottomNavigationBarItem(
@@ -79,12 +84,18 @@ class _ApplicationPageState extends State<ApplicationPage>
         Container(
           color: Colors.red,
         ),
+<<<<<<< HEAD
         // Container(
         //   color: Colors.red,
         // ),
         const ContactsPage(),
         const DemoPage(),
         const ConversationPage(),
+=======
+        const ContactsPage(),
+        const DemoPage(),
+        const MessageListPagePage(),
+>>>>>>> 27682a9 (✨ feat: 添加了腾讯IM)
         const ProfilePage(),
       ],
     );

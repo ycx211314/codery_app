@@ -148,7 +148,7 @@ class _SignUpPageState extends State<SignUpPage> {
       if (msg.code == "0000") {
         AuthorityProvider authProvider =
             Provider.of<AuthorityProvider>(context, listen: false);
-
+        authProvider.signIn();
         context.router.maybePopTop();
       }
     }

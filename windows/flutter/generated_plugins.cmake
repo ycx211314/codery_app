@@ -3,20 +3,25 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
-  desktop_drop
+  audioplayers_windows
+  desktop_drop_for_t
   fc_native_video_thumbnail
   file_selector_windows
   firebase_auth
   firebase_core
-  firebase_storage
   image_clipboard
+  media_kit_libs_windows_video
+  media_kit_video
   pasteboard
   permission_handler_windows
+  record_windows
+  screen_brightness_windows
   tencent_cloud_chat_sdk
   url_launcher_windows
 )
 
 list(APPEND FLUTTER_FFI_PLUGIN_LIST
+  media_kit_native_event_loop
 )
 
 set(PLUGIN_BUNDLED_LIBRARIES)

@@ -3,14 +3,18 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
-  desktop_drop
+  audioplayers_linux
+  desktop_drop_for_t
   file_selector_linux
   image_clipboard
+  media_kit_video
   pasteboard
+  record_linux
   url_launcher_linux
 )
 
 list(APPEND FLUTTER_FFI_PLUGIN_LIST
+  media_kit_native_event_loop
 )
 
 set(PLUGIN_BUNDLED_LIBRARIES)
