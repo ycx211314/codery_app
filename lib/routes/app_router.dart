@@ -23,7 +23,7 @@ class AppRouter extends _$AppRouter {
         AutoRoute(path: '/', page: ApplicationRoute.page, initial: true),
         AutoRoute(path: '/login', page: SignInRoute.page),
         AutoRoute(path: '/contact', page: ContactsRoute.page),
-        //  AutoRoute(path: '/contasct', page: Conver.page),
+        AutoRoute(path: '/contasct', page: ConversationRoute.page),
         AutoRoute(path: '/register', page: SignUpRoute.page),
         AutoRoute(path: '/forgetPassword', page: ForgetPasswordRoute.page),
         AutoRoute(path: '/resetPassword', page: ResetPasswordRoute.page),

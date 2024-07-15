@@ -45,7 +45,7 @@ class DemoPage extends StatelessWidget {
           FilledButton(
             onPressed: () {
               //navigator导航到一个页面\
-              // context.router.navigate(const Conversa());
+              context.router.navigate(const ConversationRoute());
             },
             child: const Text("sef"),
           ),

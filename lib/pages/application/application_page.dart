@@ -79,10 +79,10 @@ class _ApplicationPageState extends State<ApplicationPage>
         Container(
           color: Colors.red,
         ),
-        Container(
-          color: Colors.red,
-        ),
-        // const ContactsPage(),
+        // Container(
+        //   color: Colors.red,
+        // ),
+        const ContactsPage(),
         const DemoPage(),
         const ConversationPage(),
         const ProfilePage(),
