@@ -64,22 +64,22 @@ Future<void> init() async {
     SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
   }
 
-  final CoreServicesImpl coreInstance = TIMUIKitCore.getInstance();
-  await coreInstance
-      .init(
-          sdkAppID:
-              1600044793, // Replace 0 with the SDKAppID of your IM application when integrating
-          // language: LanguageEnum.en, // 界面语言配置，若不配置，则跟随系统语言
-          loglevel: LogLevelEnum.V2TIM_LOG_DEBUG,
-          onTUIKitCallbackListener: (TIMCallback
-              callbackValue) {}, // [建议配置，详见此部分](https://cloud.tencent.com/document/product/269/70746#callback)
-          listener: V2TimSDKListener())
-      .then((value) async {
-    await coreInstance.login(
-        userID: "0002",
-        userSig:
-            "eJwtzFELgjAYheH-sttCvm0umdBVBIUFYRO7FbfsI5JlprLov7fUy-MceD9EHc5BZxoSExYAWY4btalbvOLIAMBmf*l7YS1qEtOV5zCMJJ8eM1hsjHchBPPXpC0*-hYxCpxyGc0VrHx2yPobuGcGx1OeuG6hVG-dPn03ZV5K2BVFndDysrFptV2T7w*MdTDW-S9szKDzfKckxxKjOxVaoFAKVrMFA_");
-  });
+  // final CoreServicesImpl coreInstance = TIMUIKitCore.getInstance();
+  // await coreInstance
+  //     .init(
+  //         sdkAppID:
+  //             1600044793, // Replace 0 with the SDKAppID of your IM application when integrating
+  //         // language: LanguageEnum.en, // 界面语言配置，若不配置，则跟随系统语言
+  //         loglevel: LogLevelEnum.V2TIM_LOG_DEBUG,
+  //         onTUIKitCallbackListener: (TIMCallback
+  //             callbackValue) {}, // [建议配置，详见此部分](https://cloud.tencent.com/document/product/269/70746#callback)
+  //         listener: V2TimSDKListener())
+  //     .then((value) async {
+  //   await coreInstance.login(
+  //       userID: "0002",
+  //       userSig:
+  //           "eJwtzFELgjAYheH-sttCvm0umdBVBIUFYRO7FbfsI5JlprLov7fUy-MceD9EHc5BZxoSExYAWY4btalbvOLIAMBmf*l7YS1qEtOV5zCMJJ8eM1hsjHchBPPXpC0*-hYxCpxyGc0VrHx2yPobuGcGx1OeuG6hVG-dPn03ZV5K2BVFndDysrFptV2T7w*MdTDW-S9szKDzfKckxxKjOxVaoFAKVrMFA_");
+  // });
   // coreInstance.login(
   //     userID: "0001",
   //     userSig:
