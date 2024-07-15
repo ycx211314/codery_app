@@ -49,6 +49,7 @@ dependencies:
   firebase_analytics: ^11.2.0
   firebase_crashlytics: ^4.0.3
   firebase_storage: ^12.1.1
+  tencent_cloud_chat_uikit: ^2.6.0+2
 
 dev_dependencies:
   flutter_test:

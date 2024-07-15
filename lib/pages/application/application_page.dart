@@ -1,6 +1,8 @@
 import 'package:auto_route/annotations.dart';
 import 'package:codery/common/icons/iconfont.dart';
 import 'package:codery/pages/demo/demo_page.dart';
+import 'package:codery/pages/im/contacts/contact_page.dart';
+import 'package:codery/pages/im/conversations/conversation_page.dart';
 import 'package:codery/pages/profile/profile_page.dart';
 import 'package:flutter/material.dart';
 
@@ -78,12 +80,11 @@ class _ApplicationPageState extends State<ApplicationPage>
           color: Colors.red,
         ),
         Container(
-          color: Colors.orange,
-        ),
-        const DemoPage(),
-        Container(
           color: Colors.red,
         ),
+        // const ContactsPage(),
+        const DemoPage(),
+        const ConversationPage(),
         const ProfilePage(),
       ],
     );

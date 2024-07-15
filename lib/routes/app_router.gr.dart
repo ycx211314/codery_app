@@ -21,6 +21,18 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const ApplicationPage(),
       );
     },
+    ContactsRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ContactsPage(),
+      );
+    },
+    ConversationRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ConversationPage(),
+      );
+    },
     DemoRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -84,6 +96,34 @@ class ApplicationRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'ApplicationRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [ContactsPage]
+class ContactsRoute extends PageRouteInfo<void> {
+  const ContactsRoute({List<PageRouteInfo>? children})
+      : super(
+          ContactsRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ContactsRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [ConversationPage]
+class ConversationRoute extends PageRouteInfo<void> {
+  const ConversationRoute({List<PageRouteInfo>? children})
+      : super(
+          ConversationRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ConversationRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
