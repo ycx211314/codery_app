@@ -21,14 +21,16 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const ApplicationPage(),
       );
     },
-    ChatRoute.name: (routeData) {
-      final args = routeData.argsAs<ChatRouteArgs>();
+    ContactsRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: ChatPage(
-          key: args.key,
-          messageOptions: args.messageOptions,
-        ),
+        child: const ContactsPage(),
+      );
+    },
+    ConversationRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ConversationPage(),
       );
     },
     DemoRoute.name: (routeData) {
@@ -99,40 +101,31 @@ class ApplicationRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [ChatPage]
-class ChatRoute extends PageRouteInfo<ChatRouteArgs> {
-  ChatRoute({
-    Key? key,
-    required TencentCloudChatMessageOptions messageOptions,
-    List<PageRouteInfo>? children,
-  }) : super(
-          ChatRoute.name,
-          args: ChatRouteArgs(
-            key: key,
-            messageOptions: messageOptions,
-          ),
+/// [ContactsPage]
+class ContactsRoute extends PageRouteInfo<void> {
+  const ContactsRoute({List<PageRouteInfo>? children})
+      : super(
+          ContactsRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'ChatRoute';
+  static const String name = 'ContactsRoute';
 
-  static const PageInfo<ChatRouteArgs> page = PageInfo<ChatRouteArgs>(name);
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
-class ChatRouteArgs {
-  const ChatRouteArgs({
-    this.key,
-    required this.messageOptions,
-  });
+/// generated route for
+/// [ConversationPage]
+class ConversationRoute extends PageRouteInfo<void> {
+  const ConversationRoute({List<PageRouteInfo>? children})
+      : super(
+          ConversationRoute.name,
+          initialChildren: children,
+        );
 
-  final Key? key;
+  static const String name = 'ConversationRoute';
 
-  final TencentCloudChatMessageOptions messageOptions;
-
-  @override
-  String toString() {
-    return 'ChatRouteArgs{key: $key, messageOptions: $messageOptions}';
-  }
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for

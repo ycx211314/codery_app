@@ -1,15 +1,12 @@
 import 'package:auto_route/annotations.dart';
 import 'package:codery/common/icons/iconfont.dart';
-import 'package:codery/pages/contacts/contacts_page.dart';
+import 'package:codery/data/provider/im_provider.dart';
 import 'package:codery/pages/demo/demo_page.dart';
-<<<<<<< HEAD
 import 'package:codery/pages/im/contacts/contact_page.dart';
 import 'package:codery/pages/im/conversations/conversation_page.dart';
-=======
-import 'package:codery/pages/message/message_list_page_page.dart';
->>>>>>> 27682a9 (✨ feat: 添加了腾讯IM)
 import 'package:codery/pages/profile/profile_page.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 /* cSpell:disable */
 @RoutePage()
@@ -30,7 +27,7 @@ class _ApplicationPageState extends State<ApplicationPage>
         activeIcon: Icon(Iconfont.gongzuotai),
         label: 'HOME'),
     const BottomNavigationBarItem(
-        icon: Icon(Iconfont.rili),
+        icon: Icon(Iconfont.dianhuabu),
         activeIcon: Icon(Iconfont.rili),
         label: 'Contacts'),
     const BottomNavigationBarItem(
@@ -39,7 +36,7 @@ class _ApplicationPageState extends State<ApplicationPage>
         label: 'Cart'),
     const BottomNavigationBarItem(
         icon: Icon(Iconfont.comments),
-        activeIcon: Icon(Iconfont.cart),
+        activeIcon: Icon(Iconfont.comments),
         label: 'Message'),
     const BottomNavigationBarItem(
         icon: Icon(Iconfont.account),
@@ -63,6 +60,8 @@ class _ApplicationPageState extends State<ApplicationPage>
 
   //布局
   Widget _buildAppBar() {
+    IMProvider imProvider = Provider.of<IMProvider>(context);
+    imProvider.init();
     return AppBar(
         title: const Text('Codery'),
         centerTitle: true,
@@ -84,18 +83,9 @@ class _ApplicationPageState extends State<ApplicationPage>
         Container(
           color: Colors.red,
         ),
-<<<<<<< HEAD
-        // Container(
-        //   color: Colors.red,
-        // ),
         const ContactsPage(),
         const DemoPage(),
         const ConversationPage(),
-=======
-        const ContactsPage(),
-        const DemoPage(),
-        const MessageListPagePage(),
->>>>>>> 27682a9 (✨ feat: 添加了腾讯IM)
         const ProfilePage(),
       ],
     );
@@ -126,17 +116,8 @@ class _ApplicationPageState extends State<ApplicationPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: _buildAppBar() as PreferredSizeWidget?,
       body: _buildPageView(),
       bottomNavigationBar: _buildBottomNavigationBar(),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: () {
-      //     // print('点击了');
-      //   },
-      //   child: const Icon(Icons.add),
-      // ),
-      // floatingActionButtonLocation:
-      //     FloatingActionButtonLocation.centerDocked
     );
   }
 }

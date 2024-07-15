@@ -1,5 +1,9 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:codery/data/provider/im_provider.dart';
+import 'package:codery/pages/im/chats/Chat_page.dart';
+import 'package:codery/pages/im/im_user_profile/im_user_profile_page.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:tencent_cloud_chat_uikit/tencent_cloud_chat_uikit.dart';
 
 @RoutePage()
@@ -7,21 +11,11 @@ class ContactsPage extends StatelessWidget {
   const ContactsPage({super.key});
   @override
   Widget build(BuildContext context) {
-    // final CoreServicesImpl coreInstance = TIMUIKitCore.getInstance();
-    // coreInstance.init(
-    //     sdkAppID:
-    //         1600044793, // Replace 0 with the SDKAppID of your IM application when integrating
-    //     // language: LanguageEnum.en, // 界面语言配置，若不配置，则跟随系统语言
-    //     loglevel: LogLevelEnum.V2TIM_LOG_DEBUG,
-    //     onTUIKitCallbackListener: (TIMCallback
-    //         callbackValue) {}, // [建议配置，详见此部分](https://cloud.tencent.com/document/product/269/70746#callback)
-    //     listener: V2TimSDKListener());
-
-    // coreInstance.login(
-    //     userID: "0001",
-    //     userSig:
-    //         "eJyrVgrxCdYrSy1SslIy0jNQ0gHzM1NS80oy0zLBwgYGBoZQ8eKU7MSCgswUJStDM6CwiYm5pTFEJrWiILMoFShuampqBJSCiJZk5oLEzI0MDYwsLU1MoaZkpgONdc4KzQ4xyXTzzMzPd8mIjNEPqqpMdLYwMnfO9AnxyM-S9szKDzfKckxxKjOxVaoFAKVrMFA_");
-
+    IMProvider imProvider = Provider.of<IMProvider>(context, listen: false);
+    if (imProvider.isLoggedIn == false) {
+      imProvider.loginIM("0001",
+          "eJyrVgrxCdYrSy1SslIy0jNQ0gHzM1NS80oy0zLBwgYGBoZQ8eKU7MSCgswUJStDM6CwiYm5pTFEJrWiILMoFShuampqBJSCiJZk5oLEzI0MDYwsLU1MoaZkpgONdc4KzQ4xyXTzzMzPd8mIjNEPqqpMdLYwMnfO9AnxyM-S9szKDzfKckxxKjOxVaoFAKVrMFA_");
+    }
     return Scaffold(
         appBar: AppBar(
           title: const Text(
@@ -30,6 +24,25 @@ class ContactsPage extends StatelessWidget {
           ),
         ),
         body: TIMUIKitContact(
+          onTapItem: (item) {
+            // Navigator.push(
+            //     context,
+            //     MaterialPageRoute(
+            //       builder: (context) => ImUserProfilePage(userID: item.userID),
+            //     ));
+
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ChatPage(
+                      selectedConversation: V2TimConversation(
+                    conversationID: 'c2c_${item.userID}',
+                    userID: item.userID,
+                    showName: '${item.userID} 对话',
+                    type: 1,
+                  )),
+                ));
+          },
           emptyBuilder: (context) => const Center(
             child: Text("无联系人"),
           ),

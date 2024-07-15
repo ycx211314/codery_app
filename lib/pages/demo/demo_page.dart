@@ -38,14 +38,14 @@ class DemoPage extends StatelessWidget {
           FilledButton(
             onPressed: () {
               //navigator导航到一个页面\
-              context.router.navigate(const ContactsRoute());
+              // context.router.navigate(const ContactsRoute());
             },
             child: const Text("Contacts"),
           ),
           FilledButton(
             onPressed: () {
               //navigator导航到一个页面\
-              context.router.navigate(const ConversationRoute());
+              // context.router.navigate(const ConversationRoute());
             },
             child: const Text("sef"),
           ),
