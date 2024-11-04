@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:codery/data/provider/im_provider.dart';
 import 'package:codery/pages/im/chats/Chat_page.dart';
-import 'package:codery/pages/im/im_user_profile/im_user_profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tencent_cloud_chat_uikit/tencent_cloud_chat_uikit.dart';
