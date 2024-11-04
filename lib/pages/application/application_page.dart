@@ -1,9 +1,7 @@
 import 'package:auto_route/annotations.dart';
 import 'package:codery/common/icons/iconfont.dart';
-import 'package:codery/data/provider/im_provider.dart';
 import 'package:codery/pages/demo/demo_page.dart';
-import 'package:codery/pages/im/contacts/contact_page.dart';
-import 'package:codery/pages/im/conversations/conversation_page.dart';
+import 'package:codery/pages/demo/vehicle_page.dart';
 import 'package:codery/pages/profile/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -25,19 +23,19 @@ class _ApplicationPageState extends State<ApplicationPage>
     const BottomNavigationBarItem(
         icon: Icon(Iconfont.gongzuotai),
         activeIcon: Icon(Iconfont.gongzuotai),
-        label: 'HOME'),
-    const BottomNavigationBarItem(
-        icon: Icon(Iconfont.dianhuabu),
-        activeIcon: Icon(Iconfont.rili),
-        label: 'Contacts'),
-    const BottomNavigationBarItem(
-        icon: Icon(Iconfont.cart),
-        activeIcon: Icon(Iconfont.cart),
-        label: 'Cart'),
-    const BottomNavigationBarItem(
-        icon: Icon(Iconfont.comments),
-        activeIcon: Icon(Iconfont.comments),
-        label: 'Message'),
+        label: '在线车辆'),
+    // const BottomNavigationBarItem(
+    //     icon: Icon(Iconfont.dianhuabu),
+    //     activeIcon: Icon(Iconfont.rili),
+    //     label: 'Contacts'),
+    // const BottomNavigationBarItem(
+    //     icon: Icon(Iconfont.cart),
+    //     activeIcon: Icon(Iconfont.cart),
+    //     label: 'Cart'),
+    // const BottomNavigationBarItem(
+    //     icon: Icon(Iconfont.comments),
+    //     activeIcon: Icon(Iconfont.comments),
+    //     label: 'Message'),
     const BottomNavigationBarItem(
         icon: Icon(Iconfont.account),
         activeIcon: Icon(
@@ -60,8 +58,6 @@ class _ApplicationPageState extends State<ApplicationPage>
 
   //布局
   Widget _buildAppBar() {
-    IMProvider imProvider = Provider.of<IMProvider>(context);
-    imProvider.init();
     return AppBar(
         title: const Text('Codery'),
         centerTitle: true,
@@ -79,14 +75,15 @@ class _ApplicationPageState extends State<ApplicationPage>
     return PageView(
       controller: _pageController,
       onPageChanged: _handlePageChanged,
-      children: [
-        Container(
-          color: Colors.red,
-        ),
-        const ContactsPage(),
-        const DemoPage(),
-        const ConversationPage(),
-        const ProfilePage(),
+      children: const [
+        // Container(
+        //   color: Colors.red,
+        // ),
+        VehiclePage(),
+        // const ContactsPage(),
+        // const DemoPage(),
+        // const ConversationPage(),
+        ProfilePage(),
       ],
     );
   }

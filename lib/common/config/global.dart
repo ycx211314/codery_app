@@ -2,7 +2,7 @@
 import 'dart:ui';
 
 class Config {
-  static const String baseUrl = "http://test.com.cn/api/";
+  static const String baseUrl = "http://www.baidu.com";
   static const int connectTimeout = 6;
   static const int receiveTimeout = 6;
 

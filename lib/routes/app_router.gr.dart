@@ -21,18 +21,6 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const ApplicationPage(),
       );
     },
-    ContactsRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const ContactsPage(),
-      );
-    },
-    ConversationRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const ConversationPage(),
-      );
-    },
     DemoRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,

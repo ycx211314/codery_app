@@ -1,9 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:codery/pages/application/application_page.dart';
 import 'package:codery/pages/demo/demo_page.dart';
-import 'package:codery/pages/im/chats/Chat_page.dart';
-import 'package:codery/pages/im/contacts/contact_page.dart';
-import 'package:codery/pages/im/conversations/conversation_page.dart';
 import 'package:codery/pages/profile/profile_page.dart';
 import 'package:codery/pages/sample/sliver_app_bar_demo_page.dart';
 import 'package:codery/pages/sign_in/forget_password/forget_password_page.dart';

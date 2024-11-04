@@ -4,12 +4,10 @@ import 'dart:ui';
 import 'package:codery/common/config/global.dart';
 import 'package:codery/common/themes/codery_theme.dart';
 import 'package:codery/data/provider/auth_provider.dart';
-import 'package:codery/data/provider/im_provider.dart';
-import 'package:codery/firebase_options.dart';
 import 'package:codery/generated/l10n.dart';
 import 'package:codery/routes/app_router.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+// import 'package:firebase_core/firebase_core.dart';
+// import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -24,7 +22,6 @@ void main() {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => AuthorityProvider()),
-        ChangeNotifierProvider(create: (_) => IMProvider()),
       ],
       child: MyApp(),
     ),
@@ -36,15 +33,15 @@ Future<void> init() async {
 
   WidgetsFlutterBinding.ensureInitialized();
   await ScreenUtil.ensureScreenSize();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  // await Firebase.initializeApp(
+  //   options: DefaultFirebaseOptions.currentPlatform,
+  // );
   FlutterError.onError = (errorDetails) {
-    FirebaseCrashlytics.instance.recordFlutterFatalError(errorDetails);
+    // FirebaseCrashlytics.instance.recordFlutterFatalError(errorDetails);
   };
   // Pass all uncaught asynchronous errors that aren't handled by the Flutter framework to Crashlytics
   PlatformDispatcher.instance.onError = (error, stack) {
-    FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
+    // FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
     return true;
   };
   // await Admob.requestTrackingAuthorization();
