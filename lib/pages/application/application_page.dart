@@ -41,7 +41,7 @@ class _ApplicationPageState extends State<ApplicationPage>
         activeIcon: Icon(
           Iconfont.geren,
         ),
-        label: 'Account'),
+        label: '我的'),
   ];
 
   @override
