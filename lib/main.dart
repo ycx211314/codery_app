@@ -37,6 +37,7 @@ Future<void> init() async {
   //   options: DefaultFirebaseOptions.currentPlatform,
   // );
   FlutterError.onError = (errorDetails) {
+    print(errorDetails.exception);
     // FirebaseCrashlytics.instance.recordFlutterFatalError(errorDetails);
   };
   // Pass all uncaught asynchronous errors that aren't handled by the Flutter framework to Crashlytics

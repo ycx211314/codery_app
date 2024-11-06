@@ -198,7 +198,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 elevation: WidgetStateProperty.all(0),
               ),
               onPressed: () {
-                UserRespository.loginOut(context);
+                // UserRespository.loginOut(context);
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,

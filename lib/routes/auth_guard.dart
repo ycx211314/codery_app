@@ -7,9 +7,9 @@ class AuthGuard extends AutoRouteGuard {
   @override
   void onNavigation(NavigationResolver resolver, StackRouter router) {
     final context = router.navigatorKey.currentContext!;
-    final authProvider = Provider.of<AuthorityProvider>(context, listen: false);
+    // final authProvider = Provider.of<AuthorityProvider>(context, listen: false);
 
-    bool authenticated = authProvider.signInSuccess;
+    bool authenticated = true;
 
     if (authenticated) {
       // if user is authenticated we continue

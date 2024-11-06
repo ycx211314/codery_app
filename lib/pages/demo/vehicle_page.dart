@@ -1,36 +1,24 @@
-import 'package:auto_route/auto_route.dart';
-import 'package:codery/common/icons/iconfont.dart';
-import 'package:codery/common/utils/color_helper.dart';
-import 'package:codery/data/models/account.dart';
-import 'package:codery/data/provider/auth_provider.dart';
-import 'package:codery/pages/profile/widgets/cell.dart';
-import 'package:codery/pages/profile/widgets/profile_header.dart';
-import 'package:codery/respository/user_respository.dart';
+import 'dart:math';
+
 import 'package:codery/respository/vehicle_repository.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:provider/provider.dart';
-import 'package:flutter/rendering.dart';
 
-@RoutePage()
 class VehiclePage extends StatefulWidget {
   const VehiclePage({super.key});
 
   @override
-  _ProfilePageState createState() => _ProfilePageState();
+  _VehiclePageState createState() => _VehiclePageState();
 }
 
-class _ProfilePageState extends State<VehiclePage> {
-  Account? user;
-
+class _VehiclePageState extends State<VehiclePage> {
   static const loadingTag = "##loading##"; //表尾标记
   final _words = <String>[loadingTag];
 
   @override
   void initState() {
     super.initState();
-    _retrieveData();
+    print("initState");
+    _retrieveData(context);
   }
 
   @override
@@ -47,7 +35,7 @@ class _ProfilePageState extends State<VehiclePage> {
               //不足100条，继续获取数据
               if (_words.length - 1 < 100) {
                 //获取数据
-                _retrieveData();
+                _retrieveData(context);
                 //加载时显示loading
                 return Container(
                   padding: const EdgeInsets.all(16.0),
@@ -77,12 +65,15 @@ class _ProfilePageState extends State<VehiclePage> {
         ));
   }
 
-  void _retrieveData() {
+  void _retrieveData(BuildContext context) {
     VehcileRespository.loadVehicle(context).then((message) {
       print(message);
       setState(() {
         _words.insertAll(_words.length - 1, message.data);
       });
+    }).onError((error, stra) {
+      print(stra);
     });
+    // print(res);
   }
 }

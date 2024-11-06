@@ -23,11 +23,11 @@ class HttpUtil {
     // CookieJar cookieJar = CookieJar();
     // dio.interceptors.add(CookieManager(cookieJar));
 
-    dio.interceptors.add(InterceptorsWrapper(
-      onRequest: (options, handler) => {},
-      onResponse: (response, handler) => {},
-      onError: (error, handler) => {},
-    ));
+    // dio.interceptors.add(InterceptorsWrapper(
+    //   onRequest: (options, handler) => {},
+    //   onResponse: (response, handler) => {},
+    //   onError: (error, handler) => {},
+    // ));
   }
 
   Options getConfigOptions() {
@@ -43,13 +43,13 @@ class HttpUtil {
     return options;
   }
 
-  Future<Response> get(
+  Future<Response> fetchGet(
     String path, {
     Map<String, dynamic>? queryParameters,
     Options? options,
     CancelToken? cancelToken,
     ProgressCallback? onReceiveProgress,
   }) {
-    return dio.get("path", data: {});
+    return dio.get(path, queryParameters: queryParameters);
   }
 }

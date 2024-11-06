@@ -143,14 +143,14 @@ class _SignUpPageState extends State<SignUpPage> {
   handle_sign_up(BuildContext context) async {
     if (_formKey.currentState?.validate() ?? false) {
       // 验证通过，执行登录逻辑
-      Message msg = await UserRespository.createUser(_nameController.text,
-          _emailController.text, _passwordController.text, context);
-      if (msg.code == "0000") {
-        AuthorityProvider authProvider =
-            Provider.of<AuthorityProvider>(context, listen: false);
-        authProvider.signIn();
-        context.router.maybePopTop();
-      }
+      //   Message msg = await UserRespository.createUser(_nameController.text,
+      //       _emailController.text, _passwordController.text, context);
+      //   if (msg.code == "0000") {
+      //     AuthorityProvider authProvider =
+      //         Provider.of<AuthorityProvider>(context, listen: false);
+      //     authProvider.signIn();
+      //     context.router.maybePopTop();
+      //   }
     }
   }
 

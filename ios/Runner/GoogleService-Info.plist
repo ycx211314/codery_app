@@ -30,6 +30,8 @@
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:145080085678:ios:8d5e6619b0dba54422513f</string>
+	<key>DATABASE_URL</key>
+	<string>https://codery-4853e-default-rtdb.asia-southeast1.firebasedatabase.app</string>
 	<key>ADMOB_APP_ID</key>
 	<string>ca-app-pub-7472590920742255~2331390844</string>
 </dict>

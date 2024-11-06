@@ -2,7 +2,8 @@
 import 'dart:ui';
 
 class Config {
-  static const String baseUrl = "http://www.baidu.com";
+  static const String baseUrl =
+      "https://apifoxmock.com/m1/5413280-5087329-default";
   static const int connectTimeout = 6;
   static const int receiveTimeout = 6;
 

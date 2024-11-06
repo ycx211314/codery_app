@@ -200,32 +200,32 @@ class _SignInPageState extends State<SignInPage> {
 //处理登录
   hanlder_sign_in(BuildContext context) async {
     if (_formKey.currentState?.validate() ?? false) {
-      Message msg = await UserRespository.login(
-          _emailController.text, _passwordController.text, context);
-      if (msg.code == '0000') {
-        context.router.maybePop();
-      } else {
-        print(msg.message);
-      }
+      // Message msg = await UserRespository.login(
+      //     _emailController.text, _passwordController.text, context);
+      // if (msg.code == '0000') {
+      //   context.router.maybePop();
+      // } else {
+      //   print(msg.message);
+      // }
     }
   }
 
   _handle_sign_in_with_google(BuildContext context) async {
-    Message msg = await UserRespository.loginWithGoogle(context);
-    if (msg.code == '0000') {
-      context.router.maybePop();
-    } else {
-      print(msg.message);
-    }
+    // Message msg = await UserRespository.loginWithGoogle(context);
+    // if (msg.code == '0000') {
+    //   context.router.maybePop();
+    // } else {
+    //   print(msg.message);
+    // }
   }
 
   _handle_sign_in_with_apple(BuildContext context) async {
-    Message msg = await UserRespository.loginWithApple(context);
-    if (msg.code == '0000') {
-      context.router.maybePop();
-    } else {
-      print(msg.message);
-    }
+    // Message msg = await UserRespository.loginWithApple(context);
+    // if (msg.code == '0000') {
+    //   context.router.maybePop();
+    // } else {
+    //   print(msg.message);
+    // }
   }
 
   @override
