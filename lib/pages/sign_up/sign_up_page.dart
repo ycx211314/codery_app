@@ -2,15 +2,11 @@ import 'package:auto_route/auto_route.dart';
 import 'package:codery/common/icons/iconfont.dart';
 import 'package:codery/common/utils/color_helper.dart';
 import 'package:codery/common/utils/common_validator.dart';
-import 'package:codery/data/models/message.dart';
-import 'package:codery/data/provider/auth_provider.dart';
 import 'package:codery/pages/sign_in/widgets/header_logo.dart';
-import 'package:codery/respository/user_respository.dart';
 import 'package:codery/routes/app_router.dart';
 import 'package:codery/widgets/customer_input.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:provider/provider.dart';
 
 @RoutePage()
 class SignUpPage extends StatefulWidget {

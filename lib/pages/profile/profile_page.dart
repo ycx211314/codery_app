@@ -5,7 +5,6 @@ import 'package:codery/data/models/account.dart';
 import 'package:codery/data/provider/auth_provider.dart';
 import 'package:codery/pages/profile/widgets/cell.dart';
 import 'package:codery/pages/profile/widgets/profile_header.dart';
-import 'package:codery/respository/user_respository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

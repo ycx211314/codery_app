@@ -1,7 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:codery/data/provider/auth_provider.dart';
 import 'package:codery/routes/app_router.dart';
-import 'package:provider/provider.dart';
 
 class AuthGuard extends AutoRouteGuard {
   @override

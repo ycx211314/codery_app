@@ -1,10 +1,8 @@
 import 'package:auto_route/annotations.dart';
 import 'package:codery/common/icons/iconfont.dart';
-import 'package:codery/pages/demo/demo_page.dart';
 import 'package:codery/pages/demo/vehicle_page.dart';
 import 'package:codery/pages/profile/profile_page.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 /* cSpell:disable */
 @RoutePage()
